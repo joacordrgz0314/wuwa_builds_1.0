@@ -1,0 +1,117 @@
+- **2026-11-19** — [Reinicio de Armas, Ecos y Equipos](118-2026-11-19-reinicio-catalogo.md) — v0.15.0
+- **2026-11-19** — [Sets de Jingran en la ficha de Denia](117-2026-11-19-sets-jingran-en-denia.md) — v0.14.6
+- **2026-11-19** — [Sets combinados de Phrolova en la ficha de Sigrika](116-2026-11-19-sets-phrolova-en-sigrika.md) — v0.14.5
+- **2026-11-19** — [Cantidad de piezas en los iconos de set de siete fichas](115-2026-11-19-piezas-sets-equipos.md) — v0.14.4
+- **2026-11-19** — [Sets combinados de Chisa en Luuk + Lupa](114-2026-11-19-sets-chisa-en-luuk.md) — v0.14.3
+- **2026-11-19** — [Tres sets de Lucy en la tarjeta principal de Luuk](113-2026-11-19-set-principal-lucy-en-luuk.md) — v0.14.2
+- **2026-11-19** — [Tres sets de Lucy en las variantes de Luuk](112-2026-11-19-sets-lucy-en-luuk.md) — v0.14.1
+- **2026-11-19** — [Armas y apoyos recomendados de Denia a Lynae](111-2026-11-19-apoyos-por-duo.md) — v0.14.0
+- **2026-11-19** — [Etiquetas e iconos de subestadísticas de Denia](110-2026-11-19-etiquetas-denia.md) — v0.13.17
+- **2026-11-19** — [Ecos, armas y set de Luuk en la ficha de Denia](109-2026-11-19-ajustes-denia.md) — v0.13.16
+- **2026-11-19** — [Etiqueta de liberación de Aemeath](108-2026-11-19-etiqueta-aemeath.md) — v0.13.15
+- **2026-11-19** — [Ecos y armas de Hiyuki](107-2026-11-19-ajustes-hiyuki.md) — icono y sintaxis verificados · v0.13.14
+- **2026-11-19** — [Refinamiento y rendimiento de Golpe de Éter en Sigrika](106-2026-11-19-golpe-de-eter-sigrika.md) — v0.13.13
+- **2026-11-19** — [Objetivos de Ecos y armas de Sigrika](105-2026-11-19-ajustes-sigrika.md) — v0.13.12
+- **2026-11-19** — [Etiquetas de subestadísticas de Luuk Herssen](104-2026-11-19-etiquetas-luuk-herssen.md) — datos verificados · v0.13.11
+- **2026-11-19** — [Ecos, armas y equipos de Luuk Herssen](103-2026-11-19-ajustes-luuk-herssen.md) — datos, recursos y JSX verificados, revisión visual pendiente · v0.13.10
+- **2026-11-19** — [Etiqueta de ataque básico de Lynae](102-2026-11-19-etiqueta-lynae.md) — datos verificados · v0.13.9
+- **2026-11-19** — [Ecos, arma y sets de Aemeath](101-2026-11-19-ajustes-aemeath.md) — datos, JSX y presentación verificados · v0.13.8
+- **2026-11-19** — [Iconos de sets en los equipos de Mornye](100-2026-11-19-iconos-sets-mornye.md) — datos y carga de iconos verificados · v0.13.7
+- **2026-11-19** — [Objetivos de Ecos de Mornye ajustados](99-2026-11-19-subestadisticas-mornye.md) — datos verificados · v0.13.6
+- **2026-11-19** — [Efecto del arma principal y objetivos de Ecos de Mornye](98-2026-11-19-armas-ecos-mornye.md) — datos, JSX y cambios visuales verificados · v0.13.5
+- **2026-11-19** — [Reglas por tema y Death Note resumidos](97-2026-11-19-contexto-documental.md) — documentación verificada · v0.13.4
+- **2026-11-19** — [Icono de ataque básico cotejado con Akademiya](96-2026-11-19-icono-akademiya-lynae.md) — recurso y sintaxis verificados · v0.13.4
+- **2026-11-19** — [Icono de bonificación de ataque básico corregido en Lynae](95-2026-11-19-icono-bono-lynae.md) — recurso y sintaxis verificados · v0.13.3
+- **2026-11-19** — [Retirada la alternancia obligatoria de modelos](94-2026-11-19-flujo-sin-alternancia.md) — reglas verificadas · v0.13.2
+- **2026-11-19** — [Valores e icono de ataque básico integrados en las subestadísticas de Lynae](93-2026-11-19-subestadisticas-lynae.md) — datos, recurso y sintaxis verificados · v0.13.2
+- **2026-11-19** — [Lynae adapta subestadísticas y recupera rotaciones enteras](92-2026-11-19-correccion-visual-lynae.md) — datos y sintaxis verificados, revisión visual pendiente · v0.13.1
+- **2026-11-18** — [Lynae con objetivos de subestadísticas, arma y rotaciones precisas](91-2026-11-18-ajustes-lynae.md) — datos y sintaxis verificados, revisión visual pendiente · v0.13.0
+- **2026-11-18** — [Tanda F con rotaciones y nueva selección de armas de 4 estrellas](90-2026-11-18-tanda-f-rotaciones-armas.md) — datos verificados, sintaxis y revisión visual pendientes · v0.12.0
+- **2026-11-18** — [Tanda E corregida a cuatro equipos y variantes desplazables](89-2026-11-18-correccion-tanda-e.md) — datos y sintaxis verificados, revisión visual pendiente · v0.11.0
+- **2026-11-18** — [Denia, Hiyuki y Sigrika incorporadas en la tanda E](88-2026-11-18-tanda-e-builds.md) — datos verificados, revisión visual pendiente · v0.10.0
+- **2026-11-18** — [Sets combinados e iconos completos para Lucy y Rebecca](87-2026-11-18-sets-combinados.md) — datos y JSX verificados, revisión visual pendiente · v0.9.1
+- **2026-11-18** — [Lucilla, Lucy y Rebecca incorporadas en la tanda D](86-2026-11-18-tanda-d-builds.md) — datos y portadas verificadas, pestañas pendientes · v0.9.0
+- **2026-11-18** — [Separación entre filas desplazables y elementos vecinos](85-2026-11-18-separacion-filas-desplazables.md) — espacios medidos en Chrome · v0.8.4
+- **2026-11-18** — [Degradado más temprano con margen transparente](84-2026-11-18-margen-degradado.md) — capturas comparadas en Chrome · v0.8.3
+- **2026-11-18** — [Inicio más temprano del degradado en filas desplazables](83-2026-11-18-degradado-filas-desplazables.md) — verificado en Chrome · v0.8.2
+- **2026-11-18** — [Armas de Suisui, variantes de Lily y filas desplazables](82-2026-11-18-ajustes-suisui-lily-desplazamiento.md) — datos e interacción verificados en Chrome · v0.8.1
+- **2026-11-18** — [Errante Electro, Suisui y Yangyang: Xuanling con cuatro equipos por ficha](81-2026-11-18-tanda-c-builds.md) — datos y paneles verificados en Chrome · v0.8.0
+- **2026-11-18** — [Desplazamiento al pasar el puntero y sets de los equipos de Lily](80-2026-11-18-desplazamiento-sets-lily.md) — movimiento e iconos verificados en Chrome · v0.7.4
+- **2026-11-18** — [Filas desplazables en equipos y variantes de una configuración](79-2026-11-18-filas-desplazables-equipos.md) — teclado y altura verificados en Chrome · v0.7.3
+- **2026-11-18** — [Secuencias, refinamientos y sets en los equipos principales](78-2026-11-18-sets-equipos-principales.md) — 21 tarjetas verificadas en Chrome · v0.7.2
+- **2026-11-18** — [Condiciones completas e iconos de sets en Ver variantes](77-2026-11-18-sets-variantes.md) — datos, JSX y paneles verificados en Chrome · v0.7.1
+- **2026-11-18** — [Lynae, Jingran y Qingxiao con cuatro equipos y sus variantes](76-2026-11-18-tanda-b-cuatro-equipos.md) — datos y paneles verificados en Chrome · v0.7.0
+- **2026-11-18** — [Orden de estreno y estado de la ficha de Lily](75-2026-11-18-orden-estreno-estado-lily.md) — 61 personajes y respaldos verificados en Chrome · v0.6.5
+- **2026-11-18** — [Coste 4, paneles, orden de estreno y respaldo de Lily](74-2026-11-18-ecos-paneles-orden-lily.md) — interacciones y muestra de orden verificadas en Chrome · v0.6.4
+- **2026-11-18** — [IDs de Ondas cósmicas y Esmeralda del Génesis corregidos](73-2026-11-18-ids-perma-corregidos.md) — datos verificados contra Encore, revisión visual pendiente · v0.6.3
+- **2026-11-18** — [Variantes de Suoming y etiquetas PERMA corregidas](72-2026-11-18-variantes-y-perma.md) — datos y consistencia verificados, revisión visual pendiente · v0.6.2
+- **2026-11-18** — [Rankings, stats de Ecos, paneles y DPR corregidos en escritorio](71-2026-11-18-correccion-builds-escritorio.md) — código y datos verificados, revisión visual pendiente · v0.6.1
+- **2026-11-17** — [Builds de escritorio unificadas para Hsin, Suoming y Lily](70-2026-11-17-builds-escritorio-unificadas.md) — código y datos verificados, revisión visual pendiente · v0.6.0
+- **2026-11-17** — [Fase 04 investigada y rotaciones retiradas del contenido activo](69-2026-11-17-fase04-sin-rotaciones.md) — datos contrastados, builds pendientes · v0.5.6
+- **2026-11-17** — [Títulos de sección sin fondo y con sombra de texto en escritorio](68-2026-11-17-titulos-sin-fondo.md) — CSS aplicado, aspecto pendiente de revisión · v0.5.5
+- **2026-11-17** — [Panel exterior más transparente y títulos más legibles](67-2026-11-17-panel-titulos-escritorio.md) — navegación verificada, aspecto pendiente de revisión · v0.5.4
+- **2026-11-17** — [Menor opacidad del panel exterior para mostrar el retrato](66-2026-11-17-opacidad-panel-exterior.md) — navegación verificada, aspecto pendiente de revisión · v0.5.3
+- **2026-11-17** — [Fondos más opacos en la ficha de personaje en escritorio](65-2026-11-17-fondos-ficha-escritorio.md) — navegación verificada, aspecto pendiente de revisión · v0.5.2
+- **2026-11-17** — [Fondo translúcido para las pestañas de personaje en escritorio](64-2026-11-17-fondo-pestanas-escritorio.md) — navegación verificada, aspecto pendiente de revisión · v0.5.1
+- **2026-11-17** — [Jerarquía visual de la ficha aplicada en escritorio](63-2026-11-17-ficha-escritorio.md) — pestañas verificadas, revisión visual pendiente · v0.5.0
+- **2026-11-17** — [Restaurada la selección de pestañas del personaje](61-2026-11-17-pestanas-personaje.md) — verificado con clic, toque emulado y teclado · v0.4.1
+- **2026-11-17** — [Ajustes de Guía y piloto de Hsin con DPR y ranking por modo](60-2026-11-17-guia-y-piloto-hsin.md) — verificado en Chrome, rotaciones por variante pendientes · v0.4.0
+- **2026-11-17** — [Guía: ficha ampliada (tags, descripción, stats nv. 90, Forte, modos)](59-2026-11-17-guia-ficha-ampliada.md) — escrito, sin probar · v0.3.0
+- **2026-11-17** — [Guía rediseñada: chips, stats base, habilidades y bloques](58-2026-11-17-guia-rediseno.md) — escrito, sin probar · v0.2.0
+- **2026-11-17** — [Ecos: títulos de zona sin línea y etiquetas más claras](57-2026-11-17-ecos-sin-linea-etiquetas-claras.md) — escrito, sin probar · v0.1.5
+- **2026-11-17** — [Títulos con más aire, número de equipo y títulos de zona de Ecos](56-2026-11-17-titulos-zonas-numero-equipo.md) — escrito, sin probar · v0.1.4
+- **2026-11-17** — [Ecos: coste como insignia y sin la nota final](55-2026-11-17-ecos-coste-insignia-sin-nota.md) — escrito, sin probar · v0.1.3
+- **2026-11-17** — [Iconos de bono (elemento y curación) en stats](54-2026-11-17-iconos-bono-stats.md) — escrito, sin probar · v0.1.2
+- **2026-11-17** — [Ecos: columnas izquierda y derecha desde 700 px](53-2026-11-17-ecos-columnas-desde-700.md) — escrito, sin probar · v0.1.1
+- **2026-11-17** — [Ecos en tres zonas, título más separado y versión 0.1.0 visible](52-2026-11-17-ecos-tres-zonas-version.md) — escrito, sin probar · v0.1.0
+- **2026-11-17** — [Ecos: sin descripciones en stats y costes, icono de ATQ](51-2026-11-17-ecos-sin-descripciones-icono-atq.md) — escrito, sin probar
+- **2026-11-17** — [Ecos en dos columnas, divisor e iconos de stats](50-2026-11-17-ecos-columnas-iconos-stats.md) — escrito, sin probar
+- **2026-11-17** — [Ecos: combinación de sets, alternativas y eco principal](49-2026-11-17-ecos-combinacion-sets.md) — escrito, sin probar
+- **2026-11-16** — [Diseño del apartado Ecos](48-2026-11-16-ecos-diseno.md) — escrito, sin probar
+- **2026-11-16** — [Títulos de sección con el estilo de Materiales](47-2026-11-16-titulos-de-seccion.md) — escrito, sin probar
+- **2026-11-16** — [Materiales en bloques, iconos neutros y fuente de títulos](46-2026-11-16-materiales-bloques-iconos-fuente.md) — escrito, sin probar
+- **2026-11-16** — [Materiales centrados, iconos en títulos e insignia](45-2026-11-16-materiales-centrados-iconos-titulo.md) — escrito, sin probar
+- **2026-11-16** — [Equipos centrados y armas con descripción](44-2026-11-16-equipos-centrados-armas-descripcion.md) — escrito, sin probar
+- **2026-11-16** — [Nombre, equipos en tarjetas, armas con jerarquía y stats](43-2026-11-16-nombre-equipos-armas-jerarquia.md) — escrito, sin probar
+- **2026-11-16** — [Iconos neutros, equipos pequeños y materiales en cuadros](42-2026-11-16-iconos-neutros-materiales.md) — escrito, sin probar
+- **2026-11-16** — [Reglas nuevas en CLAUDE.md](41-2026-11-16-reglas-nuevas.md) — escrito
+- **2026-11-16** — [Equipos y armas con tarjetas, panel oscuro, elemento junto al nombre](40-2026-11-16-equipos-armas-panel-elemento.md) — escrito, sin probar
+- **2026-11-16** — [Detalle de personaje: ambiente y color del elemento](39-2026-11-16-detalle-ambiente-elemento.md) — escrito, sin probar
+- **2026-11-16** — [Línea del inicio sin rombo y Zhezhi más abajo](38-2026-11-16-sin-rombo-zhezhi.md) — escrito, sin probar
+- **2026-11-16** — [Portadas más abajo (Lucy, Galbrena, Lupa, Zhezhi) y línea separadora en el inicio](37-2026-11-16-portadas-bajas-linea-inicio.md) — escrito, sin probar
+- **2026-11-16** — [Barra de filtros compacta y portada más abajo](36-2026-11-16-filtros-compactos-portada-baja.md) — escrito, sin probar
+- **2026-11-16** — [Pie del menú: aviso de sitio de fans y propiedad de Kuro Games](35-2026-11-16-pie-menu-aviso-fans.md) — escrito, sin probar
+- **2026-11-16** — [Menú sin adorno central y gotas vistas de frente](34-2026-11-16-menu-sin-adorno-gota-frontal.md) — escrito, sin probar
+- **2026-11-16** — [Menú lateral, lluvia ascendente y gotas con ondas (limpieza del fondo anterior)](33-2026-11-16-menu-lateral-lluvia-gotas.md) — escrito, sin probar
+- **2026-11-16** — [Ambiente de la pantalla de carga en el menú de personajes (gotas al azar)](32-2026-11-16-ambiente-carga-en-menu.md) — escrito, sin probar
+- **2026-11-16** — [Imagen nueva, scroll más fluido, título con Marcellus y pantalla de carga](31-2026-11-16-fondo-nuevo-carga-titulo.md) — escrito, sin probar
+- **2026-11-16** — [Fondo del inicio: paisaje oficial con niebla (reemplaza el 29)](30-2026-11-16-fondo-nimbus-sanctum.md) — escrito, sin probar
+- **2026-11-16** — [Fondo del inicio: mar en movimiento y marca Tacet (reemplaza el 28)](29-2026-11-16-fondo-mar-tacet.md) — escrito, sin probar
+- **2026-11-16** — [Fondo del inicio tipo Rinascita (atardecer, solo CSS)](28-2026-11-16-fondo-rinascita.md) — escrito, sin probar
+- **2026-11-16** — [Ajuste vertical del retrato de Suoming](27-2026-11-16-ajuste-retrato-suoming.md) — escrito, sin probar
+- **2026-11-15** — [Retratos de los 13 personajes: rutas verificadas de Encore](26-2026-11-15-retratos-13-rutas.md) — escrito, sin probar
+- **2026-11-15** — [Materiales: montaje en segundo plano y caché de ítems](25-2026-11-15-materiales-sin-recarga.md) — escrito, sin probar
+- **2026-11-15** — [Retrato en caché y arreglo del Errante Electro](24-2026-11-15-retrato-cache-errante.md) — escrito, sin probar
+- **2026-11-15** — [Retrato directo sin salto de arte y bordes del arte de respaldo](23-2026-11-15-retrato-directo.md) — escrito, sin probar
+- **2026-11-15** — [Portada: cabecera y retrato más arriba](22-2026-11-15-portada-mas-arriba.md) — escrito, sin probar
+- **2026-11-15** — [Se quita la exigencia de pnpm build en CLAUDE.md](21-2026-11-15-quitar-regla-build.md) — aplicado
+- **2026-11-15** — [Portada compacta: secciones más arriba, arte más grande y arte de respaldo con el mismo tratamiento](20-2026-11-15-portada-compacta.md) — escrito, sin verificar
+- **2026-11-15** — [Retrato como fondo de la cabecera (con scroll, brillo del elemento)](19-2026-11-15-retrato-fondo.md) — escrito, sin verificar
+- **2026-11-15** — [Retrato sin tarjeta: arte integrado en la página](18-2026-11-15-retrato-sin-marco.md) — escrito, sin verificar
+- **2026-11-15** — [Portada: retrato de cuerpo completo (RolePortrait) con respaldo](17-2026-11-15-retrato-cuerpo-completo.md) — escrito, sin verificar
+- **2026-11-15** — [Revertir splash y portada; arte a la derecha](16-2026-11-15-revertir-splash-arte-derecha.md) — escrito, sin verificar
+- **2026-11-15** — [Fase 4d: Splash Art de Fandom en la portada del personaje](15-2026-11-15-fase4d-splash-art.md) — escrito, sin verificar
+- **2026-11-14** — [Fase 4c: portada de la página de personaje y fix de salto de ancho](14-2026-11-14-fase4c-portada.md) — escrito, sin verificar
+- **2026-11-14** — [Fase 4b: colores por elemento (tarjetas y página de personaje)](13-2026-11-14-fase4b-color-elemento.md) — escrito, sin verificar
+- **2026-11-14** — [Fase 4a: pestañas en la página de personaje](12-2026-11-14-fase4a-pestanas.md) — escrito, sin verificar
+- **2026-11-14** — [Fase 3c: materiales del arma personal (5★)](11-2026-11-14-fase3c-arma-personal.md) — escrito, sin verificar
+- **2026-11-14** — [Fase 3b-bis: materiales de subir habilidades](10-2026-11-14-fase3b-habilidades.md) — escrito, sin verificar
+- **2026-11-14** — [Fase 3a/3b: materiales de ascensión y nodos de talento](09-2026-11-14-fase3a-materiales.md) — escrito, sin verificar
+- **2026-11-14** — [Fase 2b: builds de Lily, Suoming y Hsin (builds.json y secciones)](08-2026-11-14-fase2b-builds.md) — escrito, sin verificar
+- **2026-11-14** — [Fase 2a: ruteo por hash y página de personaje (esqueleto)](07-2026-11-14-fase2a-pagina-personaje.md) — escrito, sin verificar
+- **2026-11-14** — [Buscador de personajes por nombre (es y en)](06-2026-11-14-buscador.md) — escrito, sin verificar
+- **2026-11-14** — [Pantalla de carga centrada con anillo orbital](05-2026-11-14-pantalla-de-carga.md) — escrito, sin verificar
+- **2026-11-13** — [Carga rápida de la grilla y orden del más nuevo al más antiguo](04-2026-11-13-velocidad-y-orden.md) — escrito, sin verificar
+- **2026-11-13** — [Carga completa de la grilla, iconos corregidos y caché 24 h](03-2026-11-13-carga-completa-y-cache.md) — escrito, sin verificar
+- **2026-11-13** — [Inicio con tarjetas, filtros y fondo de espacio](02-2026-11-13-fase1-inicio.md) — escrito, sin verificar
+- **2026-11-13** — [Base del proyecto y cliente de la API](01-2026-11-13-fase0-base.md) — creado, sin verificar

@@ -1,0 +1,105 @@
+{
+  "1108": {
+    "guia": []
+  },
+  "1109": {},
+  "1110": {},
+  "1209": {
+    "guia": []
+  },
+  "1210": {
+    "guia": []
+  },
+  "1211": {},
+  "1212": {},
+  "1308": {},
+  "1309": {},
+  "1311": {
+    "guia": [
+      {
+        "titulo": "Modos de juego",
+        "texto": "Centinela Electro con dos modos de juego (Electro Flare y Unison). Su build casi no cambia entre modos, así que no hace falta farmear dos sets; cambian los compañeros."
+      },
+      {
+        "titulo": "Daño y recursos",
+        "texto": "Su daño sale sobre todo de la habilidad de resonancia. Si los recursos son pocos, rinde más su arma exclusiva que la primera cadena (S1)."
+      }
+    ]
+  },
+  "1312": {
+    "guia": [
+      {
+        "titulo": "Modos",
+        "texto": "Suoming puede apoyar a Hsin mediante Unison o actuar como DPS principal. Heart of Sworn Vigil es su set principal en ambos modos."
+      }
+    ]
+  },
+  "1412": {
+    "guia": []
+  },
+  "1413": {},
+  "1509": {},
+  "1510": {
+    "guia": []
+  },
+  "1511": {},
+  "1512": {
+    "guia": [
+      {
+        "titulo": "Rol",
+        "texto": "Apoyo y sanadora: cura al equipo con sus ataques fuertes, agrupa enemigos y, con la Liberación, sube el ATQ de todo el equipo hasta un 28 %."
+      },
+      {
+        "titulo": "Prioridad de habilidades",
+        "texto": "Al subir habilidades conviene priorizar el Circuito de Forte y la Liberación."
+      },
+      {
+        "titulo": "Sinergia con la energía",
+        "texto": "Sus remates ganan probabilidad y daño crítico por cada punto de regeneración de energía sobre el 100 %."
+      }
+    ]
+  },
+  "1610": {},
+  "_armaPersonal": {
+    "1105": 21050026,
+    "1107": 21030016,
+    "1108": 21020086,
+    "1109": 21050086,
+    "1110": 21050096,
+    "1205": 21020016,
+    "1206": 21020036,
+    "1207": 21010036,
+    "1208": 21030036,
+    "1209": 21010066,
+    "1210": 21020076,
+    "1211": 21050076,
+    "1212": 21010076,
+    "1302": 21050016,
+    "1304": 21010026,
+    "1305": 21040016,
+    "1306": 21010046,
+    "1308": 21030066,
+    "1311": 21050116,
+    "1312": 21020107,
+    "1404": 21010016,
+    "1407": 21030026,
+    "1409": 21020056,
+    "1410": 21040046,
+    "1411": 21020066,
+    "1412": 21040066,
+    "1413": 21020106,
+    "1505": 21050036,
+    "1506": 21050046,
+    "1507": 21040036,
+    "1508": 21010056,
+    "1509": 21030046,
+    "1510": 21040056,
+    "1511": 21030056,
+    "1512": 21030076,
+    "1603": 21020026,
+    "1606": 21040026,
+    "1607": 21050056,
+    "1608": 21050066,
+    "1610": 21020096
+  }
+}
