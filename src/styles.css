@@ -31,8 +31,72 @@ body {
 .app { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px; }
 .app-msg { color: var(--mute); }
 
+.upcoming { margin-bottom: 18px; }
+.upcoming h2 {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.upcoming h2 span {
+  margin-inline-start: 8px;
+  color: var(--mute);
+  font-weight: 400;
+}
+.upcoming-roster {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.upcoming-roster li {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  padding: 9px 12px;
+  border-inline-start: 2px solid rgb(var(--elem-rgb));
+  background: linear-gradient(100deg, var(--elem-deep), var(--deep) 78%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .app:not(:has(> .loader)) > .upcoming .upcoming-roster li::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: -2px;
+    inline-size: 8px;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 1px 50%, #fff 0%, rgb(var(--elem-rgb)) 27%, transparent 74%)
+      no-repeat 0 -36px / 8px 36px;
+    animation: upcoming-border-sweep 3s linear infinite;
+  }
+
+  @keyframes upcoming-border-sweep {
+    from { background-position-y: -36px; }
+    33.333%, to { background-position-y: calc(100% + 36px); }
+  }
+}
+
+.upcoming-rarity { color: var(--gold); font-size: 0.8rem; }
+.upcoming-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 10px;
+  color: var(--ink);
+  font-size: 0.82rem;
+}
+.upcoming-detail { display: inline-flex; align-items: center; gap: 4px; }
+.upcoming-detail img { object-fit: contain; }
+
+@media (max-width: 600px) {
+  .upcoming-details { flex-basis: 100%; }
+}
+
 /* ---- filtros ---- */
-.filters { display: grid; gap: 10px; margin-bottom: 20px; }
+.filters { display: grid; gap: 10px; }
 .filter-group { display: flex; flex-wrap: wrap; gap: 8px; }
 .filter-chip {
   display: inline-flex;
@@ -110,11 +174,19 @@ body {
   right: 0;
   bottom: 0;
   margin: 0;
+  isolation: isolate;
   padding: 22px 8px 8px;
   text-align: center;
   font-size: 0.95rem;
-  background: linear-gradient(180deg, transparent, rgba(6, 10, 24, 0.92) 55%);
   border-bottom: 3px solid var(--line);
+}
+.char-card-name::before {
+  content: '';
+  position: absolute;
+  inset: -6px 0 0;
+  z-index: -1;
+  background: linear-gradient(180deg, transparent, rgba(6, 10, 24, 0.92) 58%);
+  pointer-events: none;
 }
 
 /* ---- buscador ---- */
@@ -242,7 +314,29 @@ body {
   border-bottom: 1px solid var(--line);
   scrollbar-width: none;
 }
-.char-tabs::-webkit-scrollbar { display: none; }
+.char-tabs::-webkit-scrollbar, .char-tab-list::-webkit-scrollbar { display: none; }
+.char-tab-list {
+  display: flex;
+  gap: inherit;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.char-tab-status {
+  flex: 0 0 auto;
+  align-self: center;
+  padding: 4px 8px;
+  border: 1px solid rgba(var(--elem-rgb), 0.4);
+  border-radius: 5px;
+  color: var(--ink);
+  font-size: .78rem;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .char-tabs, .char-tab-list { flex-wrap: wrap; }
+  .char-tab-list { flex-basis: 100%; }
+  .char-tab-list .char-tab { padding-inline: 8px; }
+}
 .char-tab {
   flex: 0 0 auto;
   padding: 10px 16px;
@@ -357,14 +451,16 @@ html { overflow-y: scroll; }
   mask-image: linear-gradient(to bottom, #000 55%, transparent 92%);
 }
 @media (max-width: 600px) {
-  .char-page-head:has(.is-portrait) { align-items: stretch; min-height: 0; }
+  .char-page-head:has(.is-portrait) { align-items: stretch; min-height: 0; isolation: isolate; }
   .char-page-head:has(.is-portrait) .char-page-info { max-width: none; }
   .char-page-head:has(.is-portrait)::before {
     top: 0;
     left: 50%;
     right: auto;
+    z-index: -1;
     width: min(420px, 100%);
     transform: translateX(-50%);
+    background: radial-gradient(circle at 50% 45%, rgba(var(--elem-rgb), 0.20), transparent 62%);
   }
   .char-page-art.is-portrait {
     position: static;
@@ -700,6 +796,7 @@ html { overflow-y: scroll; }
 }
 @media (max-width: 800px) {
   .shell { flex-direction: column; align-items: stretch; }
+  .shell > .app { width: 100%; }
   .side {
     flex-direction: row;
     align-items: center;
@@ -721,23 +818,23 @@ html { overflow-y: scroll; }
 }
 
 /* ---- barra de filtros compacta ---- */
-/* Fila 1: buscador + contador; fila 2: elementos y armas en una sola línea (con separador en pantallas anchas). Los chips conservan el texto. */
-.filter-top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
-.filter-top .search-input { flex: 1 1 260px; max-width: 420px; }
-.filter-count { margin: 0 0 0 auto; font-size: 0.85rem; color: var(--mute); }
-.filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+/* El contador acompaña al buscador y los filtros mantienen sus etiquetas. */
+.filter-top { display: flex; align-items: center; gap: 12px; }
+.filter-top .search-input { flex: 1 1 0; min-width: 0; max-width: 420px; }
+.filter-count { flex-shrink: 0; margin: 0; font-size: 0.85rem; color: var(--mute); }
+.filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
 .filter-row .filter-group { gap: 6px; }
 .filter-row .filter-chip { padding: 5px 10px; font-size: 0.82rem; }
 .filter-row .filter-chip img { width: 16px; height: 16px; }
-@media (min-width: 1500px) {
-  .filter-row .filter-group { flex-wrap: nowrap; }
-  .filter-row .filter-group + .filter-group { padding-left: 14px; border-left: 1px solid rgba(138, 149, 181, 0.3); }
+@media (min-width: 1400px) {
+  .filter-row .filter-group + .filter-group { padding-inline-start: 16px; border-inline-start: 1px solid rgba(138, 149, 181, 0.3); }
+}
+@media (max-width: 600px) {
+  .filter-row .filter-group + .filter-group { width: 100%; padding-block-start: 8px; border-block-start: 1px solid rgba(138, 149, 181, 0.2); }
 }
 
-/* ---- inicio: más aire arriba y línea separadora ---- */
-/* Espacio sobre la barra de filtros y una línea fina entre los filtros y la grilla (sin rombo). */
-.filters { margin: 28px 0 0; }
-.grid-rule { position: relative; height: 9px; margin: 22px 0 28px; }
+/* Línea fina entre los filtros y la grilla. */
+.grid-rule { position: relative; height: 9px; margin: 12px 0 16px; }
 .grid-rule::before {
   content: '';
   position: absolute;
@@ -1047,8 +1144,10 @@ a.team-tile:focus-visible { box-shadow: 0 6px 16px -6px rgba(255, 255, 255, 0.55
 .weapon-more { margin-top: 4px; padding: 0; border: 0; background: none; color: var(--ink); font: inherit; font-size: 0.8rem; text-decoration: underline; cursor: pointer; }
 .weapon-alts .weapon-stat { font-size: 0.76rem; padding: 3px 8px; white-space: nowrap; }
 @media (max-width: 600px) {
+  .weapon-tiers, .weapon-main.build-weapons { grid-template-columns: minmax(0, 1fr); }
   .weapon-alts .weapon-card { flex-basis: 100%; }
   .weapon-desc { flex-basis: 100%; padding: 10px 0 0; border-left: 0; border-top: 1px solid rgba(255, 255, 255, 0.18); }
+  .weapon-desc-text { overflow-wrap: anywhere; }
 }
 @media (max-width: 600px) {
   .weapon-main .weapon-icon { flex-basis: 96px; height: 96px; }

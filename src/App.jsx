@@ -9,6 +9,11 @@ import { version } from '../package.json'
 // Cuántas tarjetas se precargan antes de mostrar la grilla; el resto carga diferida.
 const EAGER = 14
 
+const UPCOMING = [
+  { name: 'Anna', elementId: 2, element: 'Fusión', weapon: 'Rectificador' },
+  { name: 'Lucielle', elementId: 5, element: 'Espectro', weapon: 'Pistolas' },
+]
+
 // Partículas ascendentes de la pantalla de carga (posición, tamaño y tiempos fijos, sin aleatoriedad en cada render).
 const LOADER_PARTICLES = Array.from({ length: 18 }, (_, i) => ({
   '--x': `${(i * 37 + 8) % 100}%`,
@@ -35,6 +40,15 @@ function uniqueOptions(characters, pick, iconOf) {
     map.set(item.Id, { id: item.Id, name: item.Name, icon: iconOf(c) })
   })
   return [...map.values()]
+}
+
+function UpcomingDetail({ label, icon }) {
+  return (
+    <span className="upcoming-detail">
+      {icon && <img src={icon} alt="" width="14" height="14" onError={(e) => { e.currentTarget.hidden = true }} />}
+      {label}
+    </span>
+  )
 }
 
 export default function App() {
@@ -151,6 +165,23 @@ export default function App() {
       )}
       {state === 'ok' && routeId == null && (
         <>
+          {UPCOMING.length > 0 && (
+            <section className="upcoming" aria-labelledby="upcoming-title">
+              <h2 id="upcoming-title">Próximamente <span>Versión 4.0</span></h2>
+              <ul className="upcoming-roster">
+                {UPCOMING.map(({ name, elementId, element, weapon }) => (
+                  <li key={name} className={`elem-${elementId}`}>
+                    <strong>{name}</strong>
+                    <span className="upcoming-rarity" aria-label="5 estrellas">5★</span>
+                    <span className="upcoming-details">
+                      <UpcomingDetail label={element} icon={elementIcons[elementId]} />
+                      <UpcomingDetail label={weapon} icon={weapons.find((option) => norm(option.name) === norm(weapon))?.icon} />
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
           <FilterBar
             elements={elements}
             weapons={weapons}

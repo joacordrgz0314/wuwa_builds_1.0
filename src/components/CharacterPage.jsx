@@ -12,7 +12,7 @@ import builds from "../data/builds.json";
 import BuildSections from "./BuildSections.jsx";
 import Materials from "./Materials.jsx";
 import Ambient from "./Ambient.jsx";
-import { CHARACTER_TABS } from "../constants.js";
+import { CHARACTER_TABS, isBuildInPreparation } from "../constants.js";
 
 function hideOnError(e) {
   e.currentTarget.style.visibility = "hidden";
@@ -217,27 +217,32 @@ export default function CharacterPage({
           />
         )}
       </header>
-      <div
-        className="char-tabs"
-        role="tablist"
-        aria-label="Secciones del personaje"
-        onKeyDown={onTabKey}
-      >
-        {CHARACTER_TABS.map((t) => (
-          <button
-            key={t.id}
-            id={`tab-${t.id}`}
-            role="tab"
-            type="button"
-            aria-selected={tab === t.id}
-            aria-controls="char-tabpanel"
-            tabIndex={tab === t.id ? 0 : -1}
-            className="char-tab"
-            onClick={() => setTab(t.id)}
-          >
-            {t.label}
-          </button>
-        ))}
+      <div className="char-tabs">
+        <div
+          className="char-tab-list"
+          role="tablist"
+          aria-label="Secciones del personaje"
+          onKeyDown={onTabKey}
+        >
+          {CHARACTER_TABS.map((t) => (
+            <button
+              key={t.id}
+              id={`tab-${t.id}`}
+              role="tab"
+              type="button"
+              aria-selected={tab === t.id}
+              aria-controls="char-tabpanel"
+              tabIndex={tab === t.id ? 0 : -1}
+              className="char-tab"
+              onClick={() => setTab(t.id)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+        {isBuildInPreparation(builds[Id], Id) && (
+          <span className="char-tab-status">Ficha en preparación</span>
+        )}
       </div>
       <div id="char-tabpanel" role="tabpanel" aria-labelledby={`tab-${tab}`}>
         {tab !== "materiales" && (

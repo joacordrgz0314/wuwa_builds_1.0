@@ -12,7 +12,7 @@ Apoyo.
 
 Esta regla prevalece sobre el orden que indique cualquier fuente.
 
-Cada personaje puede mostrar hasta cuatro dúos de equipo, con los apoyos que se recomienden para cada dúo.
+Cada personaje puede mostrar los dúos y apoyos que se recomienden para su ficha. El título de cada equipo puede editarse.
 
 Cada ranking de armas sigue la selección de cinco opciones definida en la sección 10.3.
 
@@ -147,7 +147,7 @@ Máximo dos tarjetas por fila.
 Los equipos con el mismo DPS principal y sub-DPS se agrupan en una tarjeta; los apoyos alternativos se muestran dentro de «Variantes».
 Cada configuración dentro de «Variantes» ocupa su propia fila desplazable. Si supera el ancho disponible, muestra su propio desvanecido y conserva el desplazamiento horizontal.
 
-Cada dúo puede tener hasta cinco apoyos, incluido el principal. Las recomendaciones se definen al rehacer cada ficha.
+Cada dúo puede tener un apoyo principal y las alternativas que se recomienden en la ficha.
 
 ### 10.3. Armas
 
