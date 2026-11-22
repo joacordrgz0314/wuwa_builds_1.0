@@ -1,3 +1,4 @@
+- **2026-11-22** — [Modos de resonancia y alineación de Ecos en móvil](142-2026-11-22-modos-ecos-movil.md) — v0.16.41
 - **2026-11-22** — [Icono de tarjeta solo como respaldo final](141-2026-11-22-icono-respaldo-final.md) — v0.16.40
 - **2026-11-22** — [Halo más tenue detrás del retrato en móvil](140-2026-11-22-halo-retrato-movil.md) — v0.16.39
 - **2026-11-22** — [Fichas sin desborde horizontal en móvil](139-2026-11-22-fichas-responsive.md) — v0.16.38

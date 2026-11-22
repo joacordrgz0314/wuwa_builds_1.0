@@ -1324,6 +1324,10 @@ a.team-tile:focus-visible { box-shadow: 0 6px 16px -6px rgba(255, 255, 255, 0.55
 .echo-show-name { min-width: 0; max-width: 220px; font-family: 'Cinzel', 'Marcellus', Georgia, serif; font-size: 1rem; font-weight: 600; line-height: 1.25; letter-spacing: 0.03em; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .echo-show.is-small .echo-show-name { font-size: 0.88rem; }
 .echo-show .app-msg { margin: 0; }
+@media (max-width: 699px) {
+  .echo-col-ecos .echo-show { width: 100%; justify-content: flex-start; }
+  .echo-col-ecos .echo-show-name { text-align: start; }
+}
 /* Stats recomendadas */
 .echo-stats { display: grid; gap: 14px; }
 .echo-stats::before {
@@ -1529,6 +1533,12 @@ a.team-tile:focus-visible { box-shadow: 0 6px 16px -6px rgba(255, 255, 255, 0.55
 }
 .guide-clamp.is-paired:not(.is-open) {
   max-height: var(--guide-text-height, none);
+}
+@media (max-width: 699px) {
+  .guide-modes + .guide-clamp.is-paired:not(.is-open) {
+    display: block;
+    max-height: 6.4em;
+  }
 }
 @media (min-width: 700px) {
   .guide-top:has(.guide-height-reference) .guide-clamp.is-paired:not(.is-open) {
