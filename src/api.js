@@ -1,12 +1,14 @@
 import { STAT_ICON_FILES } from "./constants";
+import releaseGroups from "./data/character-releases.json";
 
 // Único punto de contacto con la API de encore.moe. Si el formato cambia, se ajusta aquí.
 const BASE = "https://api-v2.encore.moe/api";
 const ORIGIN = "https://api-v2.encore.moe";
 const LANG = "es";
 const LILY_ID = 1512;
-const JINGRAN_ID = 1212;
-const QINGXIAO_ID = 1413;
+const releaseDates = new Map(
+  Object.entries(releaseGroups).flatMap(([date, ids]) => ids.map((id, position) => [id, { date, position }])),
+);
 
 async function fetchJson(path, lang = LANG) {
   const res = await fetch(`${BASE}/${lang}${path}`);
@@ -64,13 +66,12 @@ export function getCharacters() {
           ...c,
           EnName: names.get(c.Id) ?? "",
         }));
-        // Encore intercala a Jingran (3.6) después de Hsin (3.7).
-        const jingran = list.findIndex(({ Id }) => Id === JINGRAN_ID);
-        const qingxiao = list.findIndex(({ Id }) => Id === QINGXIAO_ID);
-        if (qingxiao >= 0 && jingran > qingxiao + 1) {
-          list.splice(qingxiao + 1, 0, ...list.splice(jingran, 1));
-        }
-        return list.reverse();
+        return list.sort((a, b) => {
+          const first = releaseDates.get(a.Id);
+          const second = releaseDates.get(b.Id);
+          const byDate = (second?.date ?? "").localeCompare(first?.date ?? "");
+          return byDate || (first && second ? first.position - second.position : a.Id - b.Id);
+        });
       })
       .catch((err) => {
         listPromise = null;
@@ -127,11 +128,13 @@ function writeStore() {
 const detailCache = new Map();
 function getDetailInfo(id) {
   if (!detailCache.has(id)) {
-    const promise = fetchJson(`/character/${id}?v=Beta`)
+    // Lily ya tiene sus recursos definitivos en Release. Beta conserva los de Ciaccona.
+    const version = id === LILY_ID ? "" : "?v=Beta";
+    const promise = fetchJson(`/character/${id}${version}`)
       .then((d) => ({
-        art: id === LILY_ID ? "" : d.FormationRoleCard || d.Skins?.[0]?.FormationRoleCard || "",
+        art: d.FormationRoleCard || d.Skins?.[0]?.FormationRoleCard || "",
         // Cuerpo completo (2048×2032); en algunos personajes el archivo no existe
-        portrait: id === LILY_ID ? "" : d.RolePortrait || "",
+        portrait: d.RolePortrait || "",
         elementIcon: d.ElementIcon || "",
         // Solo Key y Value (el resto del detalle pesa mucho y no se usa en materiales).
         breaches: (d.Breaches ?? []).map((b) => ({
@@ -185,9 +188,13 @@ function getDetailInfo(id) {
           return {
             general: texts(f?.SkillDescList),
             details: texts(f?.DescList),
-            images: (Array.isArray(f?.IconList) ? f.IconList : []).filter(
-              (u) => typeof u === "string" && u.trim(),
-            ),
+            images: (Array.isArray(f?.IconList) ? f.IconList : [])
+              .filter((url) => typeof url === "string" && url.trim())
+              .map((url) =>
+                id === 1312
+                  ? url.replace(/\/T_RoleSkillTreeSuoming(?=[123]\.webp$)/, "/T_RoleSkillTreeSuoMing")
+                  : url,
+              ),
           };
         })(),
         modes: (d.SkillBranches ?? [])
@@ -263,7 +270,10 @@ const PORTRAIT_FILES = {
 // Retrato recordado (24 h, junto al resto de la caché): la URL, '-' si no hay retrato, undefined si no se sabe.
 // Los 13 de la lista de arriba usan siempre su ruta verificada (ignora lo recordado antes).
 export function knownPortrait(id) {
-  if (id === LILY_ID) return "-";
+  if (id === LILY_ID) {
+    const known = readStore().portrait[id];
+    return known?.endsWith("/T_ActivityRoleLili.webp") ? known : undefined;
+  }
   const file = PORTRAIT_FILES[id];
   return file ? PORTRAIT_DIR + file : readStore().portrait[id];
 }
@@ -498,9 +508,8 @@ function baseFrom(art) {
 
 // URL del arte: la real si ya se conoce; si no, la derivada del nombre en inglés ('' si no se puede).
 export function artUrl(character, base) {
-  // El retrato y el arte de tarjeta que Encore enlaza para Lily son de Ciaccona.
-  if (character.Id === LILY_ID) return "";
   const known = readStore().art[character.Id];
+  if (character.Id === LILY_ID) return known?.endsWith("/T_IconRole_Pile_Lili_UI.webp") ? known : "";
   if (known) return known;
   const name = slug(character.EnName);
   return base && name ? `${base}T_IconRole_Pile_${name}_UI.webp` : "";

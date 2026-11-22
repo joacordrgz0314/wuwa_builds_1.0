@@ -1,3 +1,26 @@
+- **2026-11-22** — [Icono de tarjeta solo como respaldo final](141-2026-11-22-icono-respaldo-final.md) — v0.16.40
+- **2026-11-22** — [Halo más tenue detrás del retrato en móvil](140-2026-11-22-halo-retrato-movil.md) — v0.16.39
+- **2026-11-22** — [Fichas sin desborde horizontal en móvil](139-2026-11-22-fichas-responsive.md) — v0.16.38
+- **2026-11-22** — [Carga diferida del respaldo de retratos](138-2026-11-22-respaldo-retratos-diferido.md) — v0.16.37
+- **2026-11-22** — [Posición original de los nombres y sombra de las tarjetas](137-2026-11-22-sombra-tarjetas.md) — v0.16.36
+- **2026-11-22** — [Prueba de legibilidad de las tarjetas](136-2026-11-22-pie-tarjetas.md) — v0.16.35
+- **2026-11-22** — [Prueba de espaciado y filtros del inicio](135-2026-11-22-espaciado-filtros-inicio.md) — v0.16.34
+- **2026-11-22** — [Franja de próximos personajes y brillo cada tres segundos](134-2026-11-22-franja-proximos.md) — v0.16.33
+- **2026-11-22** — [Brillo recurrente en el adelanto](133-2026-11-22-brillo-adelanto.md) — v0.16.32
+- **2026-11-22** — [Destello en los bordes del adelanto](132-2026-11-22-destello-adelanto.md) — v0.16.31
+- **2026-11-22** — [Iconos en el adelanto de la 4.0](131-2026-11-22-iconos-adelanto.md) — v0.16.30
+- **2026-11-22** — [Prueba de Anna y Lucielle en el inicio](130-2026-11-22-adelanto-4-0.md) — v0.16.29
+- **2026-11-19** — [Icono de Daño Glacio en Ecos](129-2026-11-19-icono-dano-glacio.md) — v0.16.10
+- **2026-11-19** — [Navegación por personajes en el editor](128-2026-11-19-flechas-editor.md) — v0.16.9
+- **2026-11-19** — [Jiyan al inicio del grupo de lanzamiento](127-2026-11-19-orden-jiyan.md) — v0.16.8
+- **2026-11-19** — [Orden de personajes por fecha de estreno](126-2026-11-19-orden-estreno-personajes.md) — v0.16.7
+- **2026-11-19** — [Apoyo, estado de ficha e imágenes de Suoming](125-2026-11-19-apoyo-estado-suoming.md) — v0.16.6
+- **2026-11-19** — [Arte y retrato de Lily desde Encore](124-2026-11-19-arte-lily-encore.md) — v0.16.5
+- **2026-11-19** — [Equipos sin límite y títulos editables](123-2026-11-19-titulos-equipos-editor.md) — v0.16.4
+- **2026-11-19** — [Desplegables de equipos y sets en el editor](122-2026-11-19-desplegables-editor.md) — v0.16.3
+- **2026-11-19** — [Vista previa e iconos del editor de fichas](121-2026-11-19-vista-previa-editor.md) — v0.16.2
+- **2026-11-19** — [Efecto completo del arma principal en todas las fichas](120-2026-11-19-efecto-arma-principal.md) — v0.16.1
+- **2026-11-19** — [Editor local de fichas](119-2026-11-19-editor-local-fichas.md) — v0.16.0
 - **2026-11-19** — [Reinicio de Armas, Ecos y Equipos](118-2026-11-19-reinicio-catalogo.md) — v0.15.0
 - **2026-11-19** — [Sets de Jingran en la ficha de Denia](117-2026-11-19-sets-jingran-en-denia.md) — v0.14.6
 - **2026-11-19** — [Sets combinados de Phrolova en la ficha de Sigrika](116-2026-11-19-sets-phrolova-en-sigrika.md) — v0.14.5

@@ -10,6 +10,8 @@ const STAT_ICON_FILES = {
   atq: "T_Iconpropertyredattack_UI",
   basicAttack: "T_Iconpropertyredphysics_UI",
   liberation: 'T_Iconpropertyredskill_UI',
+  chargedAttack: 'T_Iconpropertyredfoco_UI',
+  resonanceSkill: 'T_Iconpropertyredspeed_UI',
   critProb: "T_Iconpropertyredbaoji_UI",
   critDmg: "T_Iconpropertyredcrit_UI",
   energia: "T_Iconpropertygreenenergy_UI",
@@ -24,5 +26,9 @@ const STAT_ICON_FILES = {
   bono5: "T_Iconpropertyredlight_UI",
   bono6: "T_Iconpropertyreddark_UI",
 };
+
+export function isBuildInPreparation(build, characterId) {
+  return build?.enPreparacion ?? Number(characterId) === 1512
+}
 
 export { CHARACTER_TABS, STAT_ICON_FILES };

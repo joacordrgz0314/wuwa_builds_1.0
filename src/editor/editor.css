@@ -1,0 +1,299 @@
+.build-editor {
+  --editor-base: #111e2b;
+  --editor-surface: #192a39;
+  --editor-line: #354c5b;
+  --editor-text: #f0ede4;
+  --editor-muted: #c7d2da;
+  --editor-accent: #a5e0cc;
+  width: min(1520px, 100%);
+  min-height: 100vh;
+  margin: auto;
+  padding: clamp(16px, 3vw, 42px);
+  color: var(--editor-text);
+  background: var(--editor-base);
+  font: 17px/1.5 system-ui, sans-serif;
+}
+
+.editor-header, .editor-toolbar, .editor-toolbar-actions, .editor-inline, .editor-tabs, .editor-flags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.editor-header, .editor-toolbar { justify-content: space-between; margin-bottom: 16px; }
+.editor-header h1 { margin: 0; font: clamp(1.9rem, 3vw, 2.8rem) 'Marcellus', Georgia, serif; }
+.editor-header a { color: var(--editor-accent); }
+.editor-character-nav {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: start;
+  gap: 6px;
+  flex: 1 1 16rem;
+  max-width: 26rem;
+  min-width: 0;
+}
+
+
+.editor-workspace { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(18px, 3vw, 42px); align-items: start; }
+.editor-fields, .editor-list, .editor-field { display: grid; gap: 8px; }
+.editor-inline > .editor-picker { flex: 1 1 12rem; }
+.editor-field { color: var(--editor-muted); gap: 6px; }
+.editor-preview {
+  min-width: 0;
+  border: 1px solid var(--editor-line);
+  border-radius: 8px;
+  padding: 12px;
+}
+.editor-preview { background: var(--editor-surface); }
+.editor-preview h2 { font-size: 1rem; margin: 0 0 12px; }
+.editor-form, .editor-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.editor-form > legend {
+  margin-bottom: 14px;
+  padding: 0;
+  color: var(--editor-text);
+  font: 1.65rem 'Marcellus', Georgia, serif;
+}
+.editor-form fieldset { border-top: 1px solid var(--editor-line); padding-block: 8px 12px; }
+.editor-form fieldset fieldset { border-color: #354c5b80; }
+.editor-form .editor-fields { gap: 12px; }
+.editor-form fieldset > legend { padding-inline: 6px; color: var(--editor-accent); }
+.editor-form h3 { margin: 4px 0; font-size: 1rem; }
+.editor-cost + .editor-cost { margin-top: 12px; }
+.editor-item { display: flex; align-items: start; gap: 6px; border-bottom: 1px solid var(--editor-line); padding-block: 9px; }
+.editor-item-content { flex: 1; min-width: 0; }
+.editor-item-actions { display: flex; gap: 3px; }
+.editor-item-actions button { min-width: 32px; padding-inline: 4px; }
+.editor-add { justify-self: start; }
+.editor-status { flex-basis: 100%; margin: 0; text-align: right; color: var(--gold); }
+.editor-picker { position: relative; min-width: 0; }
+.editor-picker-toggle, .editor-picker-results button { display: flex; gap: 8px; align-items: center; text-align: left; width: 100%; }
+.editor-picker-toggle span:first-of-type { flex: 1; }
+.editor-picker img { width: 26px; height: 26px; object-fit: contain; }
+.editor-picker-menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 4px);
+  left: 0;
+  width: max(100%, min(17rem, 55vw));
+  padding: 6px;
+  border-radius: 7px;
+  border: 1px solid var(--editor-line);
+  background: var(--editor-surface);
+  box-shadow: 0 8px 22px #0006;
+}
+.editor-picker-menu input { width: 100%; }
+.editor-picker-results { max-height: min(40vh, 18rem); overflow: auto; }
+.editor-picker-results button { margin-block: 3px; }
+.build-editor :where(.editor-toolbar, .editor-tabs, .editor-form) :where(button, select, input:not([type="checkbox"]), textarea) {
+  font: inherit;
+  min-height: 44px;
+  padding: 4px 8px;
+  border: 1px solid var(--editor-line);
+  border-radius: 5px;
+  background: var(--editor-surface);
+  color: var(--editor-text);
+}
+.build-editor .editor-primary { color: var(--editor-base); background: var(--editor-accent); font-weight: 650; }
+.build-editor :where(button, select, input, textarea, a):focus-visible { outline: 2px solid var(--editor-accent); outline-offset: 2px; }
+.build-editor :where(button, select):enabled { cursor: pointer; }
+.build-editor :disabled { opacity: .55; }
+.build-editor input[type="checkbox"] { accent-color: var(--editor-accent); }
+
+@media (max-width: 920px) {
+  .editor-workspace { grid-template-columns: minmax(0, 1fr); }
+}
+
+.editor-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding-block: 8px;
+  background: var(--editor-base);
+}
+.editor-unsaved, .editor-help { color: var(--editor-muted); font-size: .95rem; }
+.editor-help { margin: 0 0 10px; }
+.editor-picker-results button[aria-pressed="true"] { border-color: var(--editor-accent); }
+
+@media (min-width: 921px) {
+  .editor-preview {
+    position: sticky;
+    top: 112px;
+    max-height: calc(100dvh - 128px);
+    overflow: auto;
+  }
+}
+
+.editor-row-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+}
+.editor-row-panel:not([hidden]) { padding-block: 8px 2px; }
+
+.editor-picker.is-inline .editor-picker-menu {
+  position: static;
+  width: 100%;
+  margin-top: 4px;
+  box-shadow: none;
+}
+
+body:has(.build-editor) { background: #111e2b; color-scheme: dark; }
+.editor-header { padding-block: 4px 20px; border-bottom: 1px solid var(--editor-line); }
+.editor-header a, .editor-preview-link { color: var(--editor-accent); text-underline-offset: 4px; }
+.editor-toolbar {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--editor-line);
+}
+.editor-toolbar-actions { justify-content: flex-end; flex: 1 1 30rem; }
+.editor-preparation { display: inline-flex; align-items: center; gap: 5px; color: var(--editor-muted); }
+.editor-empty { color: var(--editor-muted); padding-block: 1rem; }
+
+.build-editor .editor-tabs button {
+  padding-inline: 4px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--editor-muted);
+}
+
+.editor-preview { padding: clamp(12px, 2vw, 22px); border-top: 2px solid var(--editor-accent); border-radius: 4px 4px 10px 10px; }
+.editor-preview h2 { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; }
+.editor-preview h2 span { color: var(--editor-muted); font-weight: 400; }
+.editor-item-actions button { min-height: 36px; }
+.editor-picker-results button { background: transparent; }
+
+@media (max-width: 920px) {
+  .editor-toolbar { position: static; }
+  .editor-toolbar-actions { justify-content: flex-start; }
+  .editor-status { text-align: left; }
+}
+.editor-workspace { margin-top: 24px; }
+.editor-editing { min-width: 0; }
+.editor-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.editor-section-heading h2 { margin: 0; font: 1.65rem 'Marcellus', Georgia, serif; }
+.editor-preview .editor-section-heading h2 { font: inherit; font-weight: 650; }
+.build-editor .editor-tabs {
+  gap: 6px;
+  margin: 0 0 18px;
+}
+.build-editor .editor-tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 1;
+  padding-inline: 8px;
+  border: 1px solid var(--editor-line);
+  border-radius: 5px;
+}
+.editor-tabs button::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--field-accent);
+}
+.editor-echo-group { border-bottom: 1px solid var(--editor-line); padding-bottom: 12px; }
+.editor-echo-group > summary {
+  padding: 8px 0;
+  color: var(--editor-text);
+  font-weight: 650;
+  cursor: pointer;
+}
+.editor-echo-group[open] > summary { margin-bottom: 6px; }
+.editor-status { color: var(--editor-muted); font-size: .9rem; }
+.editor-status[data-error="true"] { color: var(--gold); }
+.editor-mobile-view { display: none; }
+
+@media (max-width: 920px) {
+  .editor-workspace[data-preview="true"] .editor-editing,
+  .editor-workspace[data-preview="false"] .editor-preview { display: none; }
+  .editor-mobile-view {
+    display: inline-block;
+    min-height: 44px;
+    padding: 5px 10px;
+    font: inherit;
+    color: var(--editor-accent);
+    background: var(--editor-surface);
+    border: 1px solid var(--editor-line);
+    border-radius: 5px;
+  }
+}
+/* El color acompaña la etiqueta de la sección, el coste o el rol. */
+[data-section="armas"], .editor-cost[data-cost="4"], .editor-team-role[data-role="main"], .editor-role-options [data-role="main"] {
+  --field-accent: var(--gold);
+}
+[data-section="equipos"], .editor-cost[data-cost="3"], .editor-team-role[data-role="sub"], .editor-role-options [data-role="sub"] {
+  --field-accent: #bca8ee;
+}
+[data-section="ecos"], .editor-cost[data-cost="1"], .editor-team-role[data-role="support"], .editor-role-options [data-role="support"] {
+  --field-accent: var(--editor-accent);
+}
+.build-editor .editor-tabs button[aria-pressed="true"] {
+  color: var(--field-accent);
+  border-color: var(--field-accent);
+  background: color-mix(in srgb, var(--field-accent) 10%, var(--editor-base));
+}
+.editor-cost h3, .editor-form .editor-team-role > legend { color: var(--field-accent); }
+
+
+.editor-workspace .editor-preview { border-top-color: var(--field-accent); }
+
+.editor-role-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.editor-role-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 5px 10px;
+  border: 1px solid var(--editor-line);
+  border-radius: 5px;
+  color: var(--field-accent);
+  cursor: pointer;
+}
+.editor-role-options label:has(:checked) {
+  border-color: var(--field-accent);
+  background: color-mix(in srgb, var(--field-accent) 12%, var(--editor-base));
+}
+.editor-role-options input { margin: 0; accent-color: var(--field-accent); }
+.editor-supports { display: grid; gap: 8px; }
+.editor-form .editor-team-role {
+  padding: 8px 12px 12px;
+  border: 1px solid color-mix(in srgb, var(--field-accent) 45%, var(--editor-line));
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--field-accent) 5%, var(--editor-base));
+}
+.editor-support-alternatives > summary { padding-block: 8px; color: var(--editor-muted); cursor: pointer; }
+.editor-support-alternatives > summary span { padding-inline: 5px; color: var(--editor-text); }
+
+.editor-support-alternatives { padding-inline: 12px; border: 1px solid transparent; border-radius: 6px; }
+.editor-support-alternatives[open] {
+  padding-bottom: 10px;
+  border-color: color-mix(in srgb, var(--editor-text) 45%, var(--editor-line));
+  background: color-mix(in srgb, var(--editor-text) 5%, var(--editor-base));
+}
+.editor-header a, .editor-mobile-view { font-weight: 600; }
+.build-editor :where(.editor-form, .editor-toolbar) :where(input, textarea)::placeholder {
+  color: var(--editor-muted);
+  opacity: .82;
+}

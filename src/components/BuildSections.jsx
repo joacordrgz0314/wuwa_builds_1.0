@@ -15,7 +15,7 @@ function hideOnError(e) {
 }
 
 // Pide un recurso de la API solo si la build lo usa.
-function useLoad(load, needed) {
+function useLoad(load, needed, key) {
   const [state, setState] = useState({
     status: needed ? "loading" : "idle",
     data: null,
@@ -23,14 +23,15 @@ function useLoad(load, needed) {
   useEffect(() => {
     if (!needed) return undefined;
     let cancelled = false;
-    load()
+    load(key)
       .then((data) => !cancelled && setState({ status: "ok", data }))
       .catch(() => !cancelled && setState({ status: "error", data: null }));
     return () => {
       cancelled = true;
     };
-  }, []);
-  return state;
+  }, [load, needed, key]);
+  if (!needed) return { status: "idle", data: null };
+  return state.status === "idle" ? { status: "loading", data: null } : state;
 }
 
 function Section({ title, content }) {
@@ -115,7 +116,7 @@ function parseEchoStats(lines = []) {
 
 // Icono de un stat a partir de su texto; «Daño <elemento>» usa el icono de bono de ese elemento (respaldo: el del elemento). Sin icono conocido: ''.
 const ELEMENT_BY_NAME = [
-  [/gelio/, 1],
+  [/glacio|gelio/, 1],
   [/fusi[oó]n/, 2],
   [/electro/, 3],
   [/aero/, 4],
@@ -124,6 +125,8 @@ const ELEMENT_BY_NAME = [
 ];
 function statIcon(text, elementIcons) {
   const t = text.toLowerCase();
+  if (/ataque (cargado|pesado)/.test(t)) return statIconUrl('chargedAttack')
+  if (/habilidad de resonancia/.test(t)) return statIconUrl('resonanceSkill')
   if (/da[ñn]o de ataque b[aá]sico|basic attack/.test(t))
     return statIconUrl("basicAttack");
   if (/bonificaci[oó]n de liberaci[oó]n de resonancia/.test(t))
@@ -230,7 +233,7 @@ function SetCombo({ combo, sets }) {
       <div className="weapon-body">
         <div className="weapon-badges">
           <span className="weapon-badge">
-            {first.piezas} piezas
+            {first.piezas} {first.piezas === 1 ? "pieza" : "piezas"}
           </span>
           {rest.map((item) => {
             const set = sets.get(item.id);
@@ -248,7 +251,7 @@ function SetCombo({ combo, sets }) {
                     onError={hideOnError}
                   />
                 )}
-                {item.piezas} piezas
+                {item.piezas} {item.piezas === 1 ? "pieza" : "piezas"}
               </span>
             );
           })}
@@ -303,10 +306,10 @@ function EchoTargets({ items, elementIcons }) {
     <div className="echo-targets">
       <h4 className="echo-zone">Subestadísticas</h4>
       <ol className="echo-targets-list">
-        {items.map(({ nombre, valor }, index) => (
+        {items.map(({ nombre, valor, iconKey }, index) => (
           <li key={nombre}>
             <span className={`echo-target-rank rank-${index + 1}`}>{index + 1}</span>
-            <StatChip text={nombre} value={valor} elementIcons={elementIcons} />
+            <StatChip text={nombre} value={valor || undefined} iconKey={iconKey} elementIcons={elementIcons} />
           </li>
         ))}
       </ol>
@@ -405,7 +408,7 @@ function Echoes({ ecos, echoData, elementIcons }) {
   const { costs, subs, extra } = parseEchoStats(ecos.stats);
   const ready = echoData.status === "ok";
   const needsData = Boolean(ecos.ecoPrincipal || ecos.sets?.length);
-  // Fila 0 = combinación principal; las siguientes = alternativas. Un eco igual al principal no se repite.
+  // Cada fila muestra el eco asociado a su combinación de sets.
   const cards = [
     { combo: ecos.sets, label: null, eco: ecos.ecoPrincipal },
     ...(ecos.alternativas ?? []).map((a) => ({
@@ -414,10 +417,7 @@ function Echoes({ ecos, echoData, elementIcons }) {
       eco: a.ecoPrincipal,
     })),
   ];
-  const ecoIds = cards.map((c, i) =>
-    i === 0 || (c.eco && c.eco !== ecos.ecoPrincipal) ? c.eco : null,
-  );
-  const multi = ecoIds.filter(Boolean).length > 1;
+  const multi = cards.filter(({ eco }) => eco).length > 1;
   const rows = cards.map((c, i) => {
     const hasCombo = c.combo?.length > 0;
     let set;
@@ -432,8 +432,8 @@ function Echoes({ ecos, echoData, elementIcons }) {
       );
     else set = <div key={`s${i}`} className="echo-ph" aria-hidden="true" />;
     let eco;
-    if (ecoIds[i]) {
-      const e = ready ? echoData.data.echoes.get(ecoIds[i]) : null;
+    if (c.eco) {
+      const e = ready ? echoData.data.echoes.get(c.eco) : null;
       const setIcon =
         ready && hasCombo ? echoData.data.sets.get(c.combo[0].id)?.Icon : null;
       eco = e ? (
@@ -448,7 +448,7 @@ function Echoes({ ecos, echoData, elementIcons }) {
     }
     return { set, eco };
   });
-  const hasStats = costs.length > 0 || subs.length > 0 || extra.length > 0;
+  const hasStats = costs.length > 0 || subs.length > 0 || extra.length > 0 || ecos.subestadisticas?.length > 0;
   return (
     <EchoLayout
       rows={rows}
@@ -563,50 +563,32 @@ function RichParagraphs({ items, dividerAt }) {
   ));
 }
 
-// Efecto del arma en refinamiento 1 (solo la mejor); el texto completo abre en un panel independiente.
-function WeaponDesc({ id, expanded = false }) {
-  const [info, setInfo] = useState(null);
-  const [clipped, setClipped] = useState(false);
-  const ref = useRef(null);
+// Efecto completo del arma principal en refinamiento 1.
+function WeaponDesc({ id }) {
+  const [info, setInfo] = useState(null)
   useEffect(() => {
-    let cancelled = false;
+    let cancelled = false
     getWeaponDesc(id)
-      .then((d) => !cancelled && setInfo(d))
-      .catch(() => {});
+      .then((data) => !cancelled && setInfo(data))
+      .catch(() => {})
     return () => {
-      cancelled = true;
-    };
-  }, [id]);
-  useEffect(() => {
-    if (expanded) return;
-    const el = ref.current;
-    if (el) setClipped(el.scrollHeight > el.clientHeight + 1);
-  }, [expanded, info]);
-  if (!info?.desc.length) return null;
+      cancelled = true
+    }
+  }, [id])
+  if (!info?.desc.length) return null
   return (
-    <div className={`weapon-desc${expanded ? " is-full" : ""}`}>
-      {info.passive && (
-        <strong className="weapon-passive">{info.passive}</strong>
-      )}
-      <p ref={ref} className={`weapon-desc-text${expanded ? " is-full" : ""}`}>
-        {info.desc.map((p, i) =>
-          p.hl ? <b key={i}>{p.text}</b> : <span key={i}>{p.text}</span>,
+    <div className="weapon-desc is-full">
+      {info.passive && <strong className="weapon-passive">{info.passive}</strong>}
+      <p className="weapon-desc-text is-full">
+        {info.desc.map((part, index) =>
+          part.hl ? <b key={index}>{part.text}</b> : <span key={index}>{part.text}</span>,
         )}
       </p>
-      {!expanded && clipped && (
-        <MoreDialog title={info.passive || "Efecto del arma"}>
-          <p className="guide-text">
-            {info.desc.map((part, index) =>
-              part.hl ? <b key={index}>{part.text}</b> : <span key={index}>{part.text}</span>,
-            )}
-          </p>
-        </MoreDialog>
-      )}
     </div>
-  );
+  )
 }
 
-function WeaponCard({ weapon, weapons, rank, personalWeaponId, expandedDescription }) {
+function WeaponCard({ weapon, weapons, rank, personalWeaponId }) {
   const { id, porcentaje, f2p, bp, permanente, refinamiento } = weapon;
   const w = weapons.data.get(id);
   return (
@@ -648,13 +630,13 @@ function WeaponCard({ weapon, weapons, rank, personalWeaponId, expandedDescripti
         )}
         <WeaponStats id={id} />
       </div>
-      {rank === 0 && <WeaponDesc id={id} expanded={expandedDescription} />}
+      {rank === 0 && <WeaponDesc id={id} />}
     </li>
   );
 }
 
 // Jerarquía: la mejor arma grande arriba y las alternativas más pequeñas debajo.
-function Weapons({ armas, armasPorModo, weapons, personalWeaponId, expandedDescription }) {
+function Weapons({ armas, armasPorModo, weapons, personalWeaponId }) {
   const [selected, setSelected] = useState(0);
   if (weapons.status !== "ok") return <Status state={weapons} />;
   const ranking = (armasPorModo?.[selected]?.armas ?? armas).slice(0, 5);
@@ -687,7 +669,6 @@ function Weapons({ armas, armasPorModo, weapons, personalWeaponId, expandedDescr
           weapons={weapons}
           rank={0}
           personalWeaponId={personalWeaponId}
-          expandedDescription={expandedDescription}
         />
       </ol>
       {rest.length > 0 && (
@@ -907,7 +888,7 @@ function Teams({ equipos, characters, characterId, sets }) {
             .filter(Boolean)
             .join(" · ");
           return (
-            <div key={team.nombre} className="build-team">
+            <div key={n} className="build-team">
               <span className="team-num" aria-hidden="true">
                 {String(n + 1).padStart(2, "0")}
               </span>
@@ -1239,7 +1220,7 @@ function GuideTag({ tag }) {
 
 // Guía: tags, descripción y stats nv. 90, Forte (Basic Mechanics), habilidades y modos. Todo sale de la API del personaje.
 function Guide({ characterId }) {
-  const state = useLoad(() => getCharacterGuide(characterId), true);
+  const state = useLoad(getCharacterGuide, true, characterId);
   if (state.status === "loading") return <p className="app-msg">Cargando…</p>;
   if (state.status !== "ok")
     return <p className="app-msg">No se pudo cargar la guía del personaje.</p>;
@@ -1369,19 +1350,20 @@ export default function BuildSections({
     : null;
   const ecos = modeBuild?.ecos;
   const hasEcos = Boolean(
-    ecos && (ecos.sets?.length || ecos.stats?.length || ecos.ecoPrincipal),
+    ecos && (ecos.sets?.length || ecos.stats?.length || ecos.ecoPrincipal || ecos.alternativas?.length || ecos.subestadisticas?.length || ecos.nota),
   );
   const echoData = useLoad(
     getEchoData,
     Boolean(
-      build?.ecos?.sets?.length ||
-      build?.ecos?.ecoPrincipal ||
+      modeBuild?.ecos?.sets?.length ||
+      modeBuild?.ecos?.ecoPrincipal ||
+      modeBuild?.ecos?.alternativas?.some(({ ecoPrincipal, sets }) => ecoPrincipal || sets?.length) ||
       [build, ...(build?.modosBuild ?? [])].some((mode) =>
         mode?.equipos?.some((team) => team.configuracion?.length || team.variantes?.length),
       ),
     ),
   );
-  const weapons = useLoad(getWeapons, Boolean(build?.armas?.length));
+  const weapons = useLoad(getWeapons, Boolean(modeBuild?.armas?.length));
   const modeBuilds = build?.modosBuild?.map((mode) => ({ ...build, ...mode })) ?? [];
   const modesDiffer = (field) => modeBuilds.length > 1 && modeBuilds.some(
     (mode) => JSON.stringify(mode?.[field] ?? null) !== JSON.stringify(modeBuilds[0]?.[field] ?? null),
@@ -1442,7 +1424,6 @@ export default function BuildSections({
                 armasPorModo={modeBuild.armasPorModo}
                 weapons={weapons}
                 personalWeaponId={personalWeaponId}
-                expandedDescription={[1108, 1209, 1210, 1211, 1412, 1509, 1510].includes(Number(characterId))}
               />
             ) : (
               <WeaponsEmpty />
