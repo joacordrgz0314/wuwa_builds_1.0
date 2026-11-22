@@ -278,7 +278,6 @@ body {
 .build-weapons .app-msg { margin: 4px 0 0; }
 .build-stars { color: var(--violet); }
 .build-stars.rarity-5 { color: var(--gold); }
-.build-teams { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
 .build-team h4 { margin: 0 0 8px; font-size: 0.95rem; color: var(--ink); }
 .build-team ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
 .build-member {
@@ -918,7 +917,6 @@ html { overflow-y: scroll; }
   border-radius: 14px;
   background: rgba(4, 7, 15, 0.35);
 }
-.build-teams { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .build-team h4 {
   margin: 0 0 12px;
   font-family: 'Marcellus', Georgia, serif;
@@ -1011,7 +1009,6 @@ a.team-tile:focus-visible {
 .weapon-badge.is-own { border-color: var(--gold); background: color-mix(in srgb, var(--gold) 18%, transparent); color: var(--gold); }
 .weapon-name { margin-right: 6px; font-family: 'Marcellus', Georgia, serif; font-size: 1.05rem; font-weight: 400; }
 @media (max-width: 600px) {
-  .build-teams { grid-template-columns: 1fr; }
   .team-name { font-size: 0.8rem; }
   .weapon-icon { flex-basis: 72px; height: 72px; }
   .build-weapons .weapon-icon img { width: 62px; height: 62px; }
