@@ -1,7 +1,7 @@
 {
   "name": "wuwa-builds",
   "private": true,
-  "version": "0.16.42",
+  "version": "0.18.9",
   "type": "module",
   "scripts": {
     "dev": "vite",

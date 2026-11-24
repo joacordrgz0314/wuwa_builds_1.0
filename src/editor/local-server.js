@@ -1,12 +1,14 @@
 import { createHash, randomUUID } from 'node:crypto'
 import { readFile, rename, rm, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
+import { isDeepStrictEqual } from 'node:util'
 import { sections, validateBuild } from './model.js'
 
 const dataPath = fileURLToPath(new URL('../data/builds.json', import.meta.url))
 const localHosts = new Set(['localhost', '127.0.0.1', '[::1]'])
 const endpoint = '/__build-editor/data'
 const maxBytes = 512 * 1024
+const buildDate = new Intl.DateTimeFormat('sv-SE', { timeZone: 'America/Santiago' })
 const revision = (value) => value ? createHash('sha256').update(JSON.stringify(value)).digest('hex') : null
 
 const snapshot = (builds) => ({
@@ -101,6 +103,8 @@ export default function localBuildEditor() {
             }
             for (const section of sections) updated[section] = build[section]
             if (typeof build.enPreparacion === 'boolean') updated.enPreparacion = build.enPreparacion
+            if (isDeepStrictEqual(previous, updated)) return respond(response, 200, snapshot(builds))
+            updated.fechaActualizacion = buildDate.format(new Date())
             builds[characterId] = updated
             await saveData(builds)
             return respond(response, 200, snapshot(builds))

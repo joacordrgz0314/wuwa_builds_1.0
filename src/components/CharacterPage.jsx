@@ -87,7 +87,7 @@ export default function CharacterPage({
   if (!character) {
     return (
       <>
-        <a className="char-page-back" href="#/">
+        <a className="char-page-back" href="#/personajes">
           ← Volver
         </a>
         <p className="app-msg">No se encontró ese personaje.</p>
@@ -96,6 +96,7 @@ export default function CharacterPage({
   }
 
   const { Id, Name, QualityId, Element, WeaponType, RoleHeadIcon } = character;
+  const updatedOn = builds[Id]?.fechaActualizacion
   const artShift =
     PORTRAIT_SHIFT[Id] ??
     PORTRAIT_SHIFT_BY_NAME[
@@ -156,7 +157,7 @@ export default function CharacterPage({
   return (
     <div className={`char-page elem-${Element?.Id}`}>
       <Ambient />
-      <a className="char-page-back" href="#/">
+      <a className="char-page-back" href="#/personajes">
         ← Volver
       </a>
       <header
@@ -198,6 +199,11 @@ export default function CharacterPage({
               {WeaponType?.Name}
             </li>
           </ul>
+          {updatedOn && (
+            <p className="char-page-updated">
+              Última actualización: <time dateTime={updatedOn}>{updatedOn.split('-').reverse().join('/')}</time>
+            </p>
+          )}
         </div>
         {portraitDone || portrait ? (
           <img

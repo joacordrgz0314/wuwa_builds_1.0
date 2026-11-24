@@ -2,7 +2,7 @@ import { useEffect, useId, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import BuildSections from '../components/BuildSections.jsx'
 import { loadCatalog, mainStats, subStats } from './catalog.js'
-import { changeTeamRole, draftFrom, maxWeapons, previewBuild, teamTitle, toBuild, validateBuild } from './model.js'
+import { changeTeamRole, draftFrom, maxWeapons, previewBuild, secondaryCost4, teamTitle, toBuild, validateBuild } from './model.js'
 import '../styles.css'
 import './editor.css'
 
@@ -147,11 +147,14 @@ function EchoForm({ draft, update, catalog }) {
     </details>
     <details name={group} className="editor-echo-group"><summary>Estadísticas por coste</summary>
       <p className="editor-help">Añade la estadística recomendada para cada coste e indica cuántos ecos la deben llevar.</p>
-      {[4, 3, 1].map((cost) => {
-        const entry = costs[cost]
-        const change = (next) => update({ costs: { ...costs, [cost]: next } })
-        return <div className="editor-cost" data-cost={cost} key={cost}>
-          <h3>Coste {cost}</h3>
+      {[4, secondaryCost4, 3, 1].map((key) => {
+        const entry = costs[key]
+        if (!entry) return null
+        const second = key === secondaryCost4
+        const cost = second ? 4 : key
+        const change = (next) => update({ costs: { ...costs, [key]: next } })
+        return <div className="editor-cost" data-cost={cost} key={key}>
+          <h3>{second ? 'Segundo coste 4' : `Coste ${cost}`}</h3>
           <OrderedRows items={entry.rows} onChange={(rows) => change({ ...entry, rows })} addLabel="Añadir estadística"
             add={() => ({ name: '', quantity: 1 })}
             render={(stat, setStat) => <div className="editor-inline editor-stat-row">
@@ -160,6 +163,14 @@ function EchoForm({ draft, update, catalog }) {
               <Pieces label="Ecos" max={cost === 4 ? 2 : cost === 3 ? 2 : 5} value={stat.quantity}
                 onChange={(quantity) => setStat({ ...stat, quantity })} />
             </div>} />
+          {key === 4 && !costs[secondaryCost4] && <button type="button" className="editor-cost-action" onClick={() =>
+            update({ costs: { ...costs, [secondaryCost4]: { rows: [{ name: '', quantity: 1 }], note: '' } } })
+          }>Añadir segundo coste 4</button>}
+          {second && <button type="button" className="editor-cost-action" onClick={() => {
+            const next = { ...costs }
+            delete next[secondaryCost4]
+            update({ costs: next })
+          }}>Quitar segundo coste 4</button>}
         </div>
       })}
     </details>
@@ -334,7 +345,10 @@ function Editor() {
   const build = draft && toBuild(draft, catalog.people)
   const save = async () => {
     const invalidCosts = Object.values(draft.costs).some(({ rows }) => rows.some(({ name }) => !name))
-    const error = invalidCosts ? 'Selecciona todas las estadísticas principales añadidas.' : validateBuild(build, characterId)
+    const secondCost = draft.costs[secondaryCost4]
+    const incompleteCost4 = secondCost && (!draft.costs[4].rows.length || !secondCost.rows.length)
+    const error = incompleteCost4 ? 'Añade una estadística en cada bloque de coste 4.'
+      : invalidCosts ? 'Selecciona todas las estadísticas principales añadidas.' : validateBuild(build, characterId)
     if (error) { setStatus(error); return }
     setSaving(true)
     setStatus('')

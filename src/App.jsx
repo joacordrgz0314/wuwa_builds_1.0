@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { bootstrap, getCharacters, preloadFirst, weaponIconUrl } from './api.js'
 import CharacterCard from './components/CharacterCard.jsx'
 import FilterBar from './components/FilterBar.jsx'
@@ -25,10 +25,10 @@ const LOADER_PARTICLES = Array.from({ length: 18 }, (_, i) => ({
 // Texto sin acentos ni mayúsculas para comparar en el buscador.
 const norm = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 
-// Ruta por hash: '#/personaje/<id>' abre la página de un personaje; cualquier otra cosa, el inicio.
+// Las rutas sin ID de personaje muestran el catálogo.
 function readRoute() {
-  const m = /^#\/personaje\/(\d+)$/.exec(window.location.hash)
-  return m ? Number(m[1]) : null
+  const character = /^#\/personaje\/(\d+)$/.exec(window.location.hash)
+  return character ? Number(character[1]) : null
 }
 
 // Opciones únicas (por id) de los personajes.
@@ -62,6 +62,9 @@ export default function App() {
   const [weapon, setWeapon] = useState(null)
   const [query, setQuery] = useState('')
   const [routeId, setRouteId] = useState(readRoute)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuHidden, setMenuHidden] = useState(false)
+  const menuButton = useRef(null)
 
   useEffect(() => {
     let cancelled = false
@@ -96,11 +99,52 @@ export default function App() {
   useEffect(() => {
     const onHash = () => {
       setRouteId(readRoute())
+      setMenuOpen(false)
+      setMenuHidden(false)
       window.scrollTo(0, 0)
     }
     window.addEventListener('hashchange', onHash)
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
+
+  useEffect(() => {
+    const mobile = window.matchMedia('(max-width: 800px)')
+    let previousY = Math.max(0, window.scrollY)
+
+    function resetMenu() {
+      previousY = Math.max(0, window.scrollY)
+      setMenuOpen(false)
+      setMenuHidden(false)
+    }
+
+    function onScroll() {
+      if (!mobile.matches || menuOpen) return
+      const y = Math.max(0, window.scrollY)
+      const delta = y - previousY
+      if (y <= 2) {
+        setMenuHidden(false)
+      } else if (Math.abs(delta) >= 8) {
+        setMenuHidden(delta > 0 && y >= 48)
+      } else {
+        return
+      }
+      previousY = y
+    }
+
+    mobile.addEventListener('change', resetMenu)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      mobile.removeEventListener('change', resetMenu)
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [menuOpen])
+
+  function onMenuKeyDown(event) {
+    if (!menuOpen || event.key !== 'Escape') return
+    event.preventDefault()
+    setMenuOpen(false)
+    menuButton.current.focus()
+  }
 
   const elements = useMemo(
     () => uniqueOptions(characters, (c) => c.Element, (c) => elementIcons[c.Element?.Id] ?? ''),
@@ -118,17 +162,40 @@ export default function App() {
 
   return (
     <div className="shell">
-      <aside className="side">
-        <h1 className="side-title"><span>Builds</span><span>Wuthering Waves</span></h1>
-        <nav className="side-nav" aria-label="Secciones">
-          <a className="side-link is-active" href="#/" aria-current="page">Personajes</a>
+      <aside
+        className={`side${menuOpen ? ' is-menu-open' : ''}${menuHidden ? ' is-menu-hidden' : ''}`}
+        onKeyDown={onMenuKeyDown}
+      >
+        <div className="side-brand">
+          <img className="side-emblem" src={`${import.meta.env.BASE_URL}tacet-emblem.png`} alt="" width="40" height="40" />
+          <h1 className="side-title"><span>Tacet Builds</span><span>Guías de Wuthering Waves</span></h1>
+        </div>
+        <button
+          className="side-toggle"
+          type="button"
+          ref={menuButton}
+          aria-controls="site-navigation"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          onClick={() => {
+            setMenuHidden(false)
+            setMenuOpen(!menuOpen)
+          }}
+        >
+          <span aria-hidden="true"><i /><i /><i /></span>
+        </button>
+        <nav className="side-nav" id="site-navigation" aria-label="Secciones">
+          <span className="side-link is-disabled" aria-disabled="true">Inicio <em>Pronto</em></span>
+          <a
+            className="side-link is-active"
+            href="#/personajes"
+            aria-current={routeId == null ? 'page' : undefined}
+            onClick={() => setMenuOpen(false)}
+          >Personajes</a>
           <span className="side-link is-disabled" aria-disabled="true">Armas <em>Pronto</em></span>
         </nav>
         <div className="side-foot">
           <span className="side-rule" aria-hidden="true" />
-          <p>Sitio de fans, no oficial</p>
-          <p>Wuthering Waves es propiedad de Kuro Games</p>
-          <p>Datos: encore.moe</p>
           <p className="side-version">v{version}</p>
         </div>
       </aside>
@@ -141,7 +208,7 @@ export default function App() {
             {LOADER_PARTICLES.map((p, i) => <span key={i} style={p} />)}
           </div>
           <div className="loader-center">
-            <p className="loader-title"><span>Builds</span><span>Wuthering Waves</span></p>
+            <p className="loader-title"><span>Tacet Builds</span><span>Guías de Wuthering Waves</span></p>
             <div className="loader-bar" aria-hidden="true">
               <span style={{ transform: `scaleX(${0.08 + phase * 0.3})` }} />
             </div>
@@ -171,8 +238,10 @@ export default function App() {
               <ul className="upcoming-roster">
                 {UPCOMING.map(({ name, elementId, element, weapon }) => (
                   <li key={name} className={`elem-${elementId}`}>
-                    <strong>{name}</strong>
-                    <span className="upcoming-rarity" aria-label="5 estrellas">5★</span>
+                    <div className="upcoming-character-heading">
+                      <strong>{name}</strong>
+                      <span className="upcoming-rarity" aria-label="5 estrellas">5★</span>
+                    </div>
                     <span className="upcoming-details">
                       <UpcomingDetail label={element} icon={elementIcons[elementId]} />
                       <UpcomingDetail label={weapon} icon={weapons.find((option) => norm(option.name) === norm(weapon))?.icon} />
@@ -212,7 +281,20 @@ export default function App() {
           )}
         </>
       )}
-      <p className="app-legal">Sitio de fans, no oficial · Wuthering Waves es propiedad de Kuro Games · Datos: encore.moe · v{version}</p>
+      <footer className="app-footer" role="contentinfo">
+        <div>
+          <p className="app-footer-name">
+            <img src={`${import.meta.env.BASE_URL}tacet-emblem.png`} alt="" width="24" height="24" />
+            Tacet Builds
+          </p>
+          <p>Sitio de fans, no oficial.</p>
+          <p>Wuthering Waves es propiedad de Kuro Games.</p>
+        </div>
+        <div className="app-footer-actions">
+          <p>Datos de <a href="https://encore.moe/">Encore</a><span className="app-footer-version"> · v{version}</span></p>
+          <button type="button" onClick={() => window.scrollTo(0, 0)}>Volver arriba <span aria-hidden="true">↑</span></button>
+        </div>
+      </footer>
     </main>
     </div>
   )

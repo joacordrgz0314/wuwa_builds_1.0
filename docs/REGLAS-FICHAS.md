@@ -177,7 +177,7 @@ Las estadísticas se obtienen de Properties de /weapon/{id}.
 Solo la mejor arma muestra la descripción del efecto en refinamiento 1 (Desc).
 
 La descripción debe incluir un «Ver más» cuando supere las cinco líneas.
-Cada ranking tiene como máximo cinco armas. La selección incluye las dos mejores por rendimiento individual, una permanente de 5 estrellas competitiva y las dos mejores armas de 4 estrellas por rendimiento individual, tengan o no etiqueta `F2P`. Si un arma de 4 estrellas ya ocupa uno de los dos primeros puestos, se añaden igualmente las dos siguientes mejores de 4 estrellas en los puestos cuatro y cinco. Entre esos dos últimos puestos puede haber como máximo un arma `BP`; si las dos mejores fueran `BP`, se conserva la mejor y se salta a la siguiente opción sin `BP`. En igualdad de porcentaje, se prioriza el arma sin `BP`. No se usan armas de 3 estrellas.
+Cada ranking tiene como máximo cinco armas. La selección incluye las dos mejores por rendimiento individual, una permanente de 5 estrellas competitiva y las dos mejores armas de 4 estrellas por rendimiento individual, tengan o no etiqueta `F2P`. Si un arma de 4 estrellas ya ocupa uno de los dos primeros puestos, se añaden igualmente las dos siguientes mejores de 4 estrellas en los puestos cuatro y cinco. Entre esos dos últimos puestos puede haber como máximo un arma `BP`; si las dos mejores fueran `BP`, se conserva la mejor y se salta a la siguiente opción sin `BP`. En igualdad de porcentaje, se prioriza el arma sin `BP`. Se puede recomendar un arma de 3 estrellas cuando su rendimiento o utilidad para el personaje lo justifique. Puede ocupar un puesto de alternativa dentro del máximo de cinco.
 
 Todas las armas muestran junto a su nombre el refinamiento usado en la comparación, de `R1` a `R5`.
 
@@ -319,7 +319,7 @@ Se leen del texto ecos.stats.
 Formatos:
 
 ```text
-Coste N: A o B (nota)
+Coste N: A + B (nota)
 Subestadísticas: A > B > C
 ```
 
@@ -329,7 +329,7 @@ La nota entre paréntesis no se muestra.
 Los costes se ordenan 4, 3, 1.
 Las subestadísticas se muestran en cadena utilizando ›.
 La nota pequeña se conserva cuando corresponda al formato visual definido.
-Las alternativas de coste 4 se muestran en burbujas separadas y apiladas, cada una con su icono.
+Las estadísticas de una tarjeta de coste 4 se muestran en burbujas separadas, cada una con su icono. Cuando la build equipa dos ecos de coste 4 en puestos separados, cada línea `Coste 4:` genera su propia tarjeta.
 Las dos estadísticas del coste 3 se muestran en burbujas separadas y apiladas, cada una con su icono.
 Si las dos estadísticas del coste 3 son iguales, se muestran en una sola burbuja con `×2`.
 En coste 1 se muestra el icono de la estadística y la cantidad `×2` alineada a la derecha.
