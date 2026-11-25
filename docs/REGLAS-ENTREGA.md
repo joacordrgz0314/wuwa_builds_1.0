@@ -185,3 +185,9 @@ Crees commits de release.
 Hagas push.
 
 Estas acciones corresponden al usuario.
+
+### Revisión del catálogo antes de un commit
+
+Antes de preparar un commit, comprueba si `src/data/builds.json` cambió frente a `HEAD`, aunque el usuario no haya mencionado las builds. Resume las entradas nuevas, las fichas editadas por sección y los demás cambios del sitio. Distingue lo preparado en Git de los cambios posteriores en el árbol de trabajo. Si el alcance es ambiguo, confirma con el usuario qué builds incluir antes de prepararlas. Consulta el [Death Note del catálogo](DEATH-NOTE-CATALOGO.md#revisión-antes-de-un-commit).
+
+Las builds nuevas o actualizadas por el usuario se consideran terminadas para el seguimiento del catálogo. Las correcciones de metadatos por sí solas se informan aparte. El alcance del commit se determina por el pedido del usuario.

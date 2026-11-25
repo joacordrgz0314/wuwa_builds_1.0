@@ -1,3 +1,26 @@
+- **2026-11-25** — [Cierre de Armas en el Death Note](196-2026-11-25-cierre-armas-death-note.md) — documentación · v0.20.0
+- **2026-11-25** — [Revisión del catálogo para publicar 0.20.0](195-2026-11-25-revision-publicacion-0200.md) — alcance revisado · v0.20.0
+- **2026-11-25** — [Portada de armas en móvil vertical](194-2026-11-25-portada-armas-movil.md) — Chrome con Encore en vivo · v0.20.0
+- **2026-11-25** — [Iconos de PS en las fichas de armas](193-2026-11-25-iconos-ps-armas.md) — cinco fichas verificadas en Chrome con Encore en vivo · v0.20.0
+- **2026-11-25** — [Marco y estadísticas del detalle de armas](192-2026-11-25-marco-y-estadisticas-armas.md) — Chrome con Encore en vivo · v0.20.0
+- **2026-11-25** — [Portada y selector de refinamiento en Armas](191-2026-11-25-portada-refinamiento-armas.md) — Chrome con Encore en vivo · v0.20.0
+- **2026-11-25** — [Desvanecido de los nombres largos en Armas](190-2026-11-25-desvanecido-nombres-armas.md) — esbuild verificado, revisión visual a cargo del usuario · v0.20.0
+- **2026-11-25** — [Tarjetas de Armas con enlace completo](189-2026-11-25-tarjetas-armas-enlace-completo.md) — Chrome con Encore en vivo · v0.20.0
+- **2026-11-25** — [Fichas individuales de armas con refinamiento](188-2026-11-25-fichas-individuales-armas.md) — Chrome con Encore en vivo · v0.20.0
+- **2026-11-25** — [Desplazamiento al abrir sets de Equipos en el editor](187-2026-11-25-sets-equipos-editor.md) — comprobado en muestra de Chrome · v0.19.1
+- **2026-11-25** — [Desplazamiento al abrir paneles de Equipos en el editor](186-2026-11-25-paneles-equipos-editor.md) — comprobado en muestra de Chrome · v0.19.1
+- **2026-11-25** — [Rareza y apertura adaptable en los selectores del editor](185-2026-11-25-selectores-editor-local.md) — comprobado en muestra de Chrome · v0.19.1
+- **2026-11-25** — [Hitos iniciales y criterio de builds terminadas](184-2026-11-25-hitos-y-builds-terminadas.md) — documentación · v0.19.1
+- **2026-11-25** — [Seguimiento compacto y 27 builds completadas](183-2026-11-25-seguimiento-compacto-builds.md) — documentación · v0.19.1
+- **2026-11-25** — [Seguimiento de builds y planificación vigente en los Death Note](182-2026-11-25-seguimiento-builds.md) — documentación · v0.19.1
+- **2026-11-25** — [Death Note consolidados y revisión de builds antes de un commit](181-2026-11-25-consolidacion-death-notes.md) — documentación · v0.19.1
+- **2026-11-24** — [Pie al fondo de las páginas cortas](180-2026-11-24-pie-al-fondo.md) — comprobado en muestra de Chrome · v0.19.1
+- **2026-11-24** — [Próximamente antes del encabezado del catálogo](179-2026-11-24-proximamente-antes-del-catalogo.md) — comprobado en muestra de Chrome · v0.19.0
+- **2026-11-24** — [Encabezados compactos para Personajes y Armas](178-2026-11-24-encabezados-compactos.md) — comprobado en muestra de Chrome · v0.19.0
+- **2026-11-24** — [Estrenos, estrellas de filtro y rareza verde en Armas](177-2026-11-24-estrenos-y-rareza-armas.md) — orden y estilos comprobados · v0.19.0
+- **2026-11-24** — [Orden de estreno, nombres largos y títulos de catálogo](176-2026-11-24-orden-armas-y-titulos.md) — asociaciones y muestra de Chrome verificadas · v0.19.0
+- **2026-11-24** — [Fondo y filtros compartidos en Armas y Personajes](175-2026-11-24-estilo-compartido-armas.md) — comprobado en Chrome · v0.19.0
+- **2026-11-24** — [Catálogo de armas con búsqueda y filtros](174-2026-11-24-catalogo-armas.md) — Encore y comportamiento verificados en muestra · v0.19.0
 - **2026-11-24** — [Versionado de cambios del editor local](173-2026-11-24-versionado-editor-local.md) — documentación · v0.18.9
 - **2026-11-24** — [Bordes de rareza y marco blanco en Armas](172-2026-11-24-bordes-rareza-armas.md) — comprobado en ranking de muestra · v0.18.9
 - **2026-11-24** — [Fondo y marco azules para armas de tres estrellas](171-2026-11-24-fondo-azul-armas.md) — ranking de Cartethyia comprobado en muestra de Chrome · v0.18.9

@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import BuildSections from '../components/BuildSections.jsx'
 import { loadCatalog, mainStats, subStats } from './catalog.js'
@@ -14,13 +14,54 @@ function Picture({ item }) {
   return item?.icon && <img src={item.icon} alt="" loading="lazy" onError={(event) => { event.currentTarget.hidden = true }} />
 }
 
-function Picker({ label, items, value, onChange, disabled, inline }) {
+function Picker({ label, items, value, onChange, disabled, inline, revealOnOpen }) {
   const [open, setOpen] = useState(false)
   const [search, setSearch] = useState('')
+  const [placement, setPlacement] = useState(null)
   const toggle = useRef(null)
+  const input = useRef(null)
+  const menu = useRef(null)
+  const results = useRef(null)
+
+  useLayoutEffect(() => {
+    if (!open) return undefined
+    input.current.focus({ preventScroll: true })
+    if (inline) {
+      if (revealOnOpen) revealEditorPanel(toggle.current, menu.current)
+      return undefined
+    }
+
+    const viewport = window.visualViewport
+    function positionMenu() {
+      const bounds = toggle.current.getBoundingClientRect()
+      const viewportTop = viewport?.offsetTop ?? 0
+      const viewportHeight = viewport?.height ?? window.innerHeight
+      const above = bounds.top - viewportTop - 12
+      const below = viewportTop + viewportHeight - bounds.bottom - 12
+      const chrome = menu.current.offsetHeight - results.current.offsetHeight
+      const rootSize = Number.parseFloat(getComputedStyle(document.documentElement).fontSize)
+      const preferred = chrome + Math.min(results.current.scrollHeight, window.innerHeight * 0.4, rootSize * 18)
+      const up = below < preferred && above > below
+      const height = Math.max(0, Math.floor((up ? above : below) - chrome))
+      setPlacement((previous) => previous?.up === up && previous.height === height ? previous : { up, height })
+    }
+
+    positionMenu()
+    window.addEventListener('resize', positionMenu)
+    window.addEventListener('scroll', positionMenu, { passive: true })
+    viewport?.addEventListener('resize', positionMenu)
+    viewport?.addEventListener('scroll', positionMenu)
+    return () => {
+      window.removeEventListener('resize', positionMenu)
+      window.removeEventListener('scroll', positionMenu)
+      viewport?.removeEventListener('resize', positionMenu)
+      viewport?.removeEventListener('scroll', positionMenu)
+    }
+  }, [open, inline, revealOnOpen])
+
   const closePicker = () => {
     setOpen(false)
-    toggle.current?.focus()
+    toggle.current?.focus({ preventScroll: true })
   }
   const selected = items.find(({ id }) => id === value)
   const matches = open ? items.filter(({ name }) => normalize(name).includes(normalize(search.trim()))) : []
@@ -34,19 +75,40 @@ function Picker({ label, items, value, onChange, disabled, inline }) {
         onClick={() => { setSearch(''); setOpen(!open) }}>
         <Picture key={selected?.id} item={selected} /><span>{selected?.name ?? label}</span><span aria-hidden="true">▾</span>
       </button>
-      {open && <div className="editor-picker-menu">
-        <input autoFocus aria-label={`Buscar: ${label}`} placeholder="Buscar por nombre" value={search}
+      {open && <div ref={menu} className={`editor-picker-menu${!inline && placement?.up ? ' opens-up' : ''}`}
+        style={!inline && placement ? { '--picker-results-height': `${placement.height}px` } : undefined}>
+        <input ref={input} aria-label={`Buscar: ${label}`} placeholder="Buscar por nombre" value={search}
           onChange={(event) => setSearch(event.target.value)} />
-        <div className="editor-picker-results">
+        <div ref={results} className="editor-picker-results">
           {matches.map((item) => <button type="button" key={item.id} aria-pressed={item.id === value}
             onClick={() => { onChange(item.id); closePicker() }}>
-            <Picture item={item} />{item.name}
+            <Picture item={item} /><span className="editor-picker-name">{item.name}</span>
+            {item.rarity > 0 && <span className={`editor-picker-stars build-stars rarity-${item.rarity}`} role="img"
+              aria-label={`${item.rarity} ${item.rarity === 1 ? 'estrella' : 'estrellas'}`}>{'★'.repeat(item.rarity)}</span>}
           </button>)}
           {matches.length === 0 && <p>Sin resultados</p>}
         </div>
       </div>}
     </div>
   )
+}
+
+function revealEditorPanel(heading, panel) {
+  requestAnimationFrame(() => {
+    if (!heading.isConnected || !panel.getClientRects().length) return
+
+    const toolbar = heading.closest('.build-editor')?.querySelector('.editor-toolbar')
+    const toolbarHeight = toolbar && getComputedStyle(toolbar).position === 'sticky' ? toolbar.offsetHeight : 0
+    const headingBounds = heading.getBoundingClientRect()
+    const panelBounds = panel.getBoundingClientRect()
+    const top = toolbarHeight + 12
+    const bottom = window.innerHeight - 12
+    const previewBottom = Math.min(panelBounds.bottom, headingBounds.bottom + 180)
+    const availableScroll = headingBounds.top - top
+    const delta = Math.min(Math.max(0, previewBottom - bottom), availableScroll)
+
+    if (Math.abs(delta) >= 1) window.scrollBy({ top: delta, behavior: 'instant' })
+  })
 }
 
 function OrderedRows({ items, onChange, add, addLabel, limit = Infinity, render, rowTitle }) {
@@ -82,7 +144,10 @@ function OrderedRows({ items, onChange, add, addLabel, limit = Infinity, render,
           <div className="editor-item" key={index}>
             <div className="editor-item-content">
               {title && <button type="button" className="editor-row-toggle" aria-expanded={expanded}
-                aria-controls={panelId} onClick={() => setActiveIndex(expanded ? null : index)}>
+                aria-controls={panelId} onClick={(event) => {
+                  setActiveIndex(expanded ? null : index)
+                  if (!expanded) revealEditorPanel(event.currentTarget, event.currentTarget.nextElementSibling)
+                }}>
                 <span>{title}</span><span aria-hidden="true">{expanded ? '▴' : '▾'}</span>
               </button>}
               <div id={title ? panelId : undefined} hidden={!expanded} className={title ? 'editor-row-panel' : undefined}>
@@ -110,11 +175,12 @@ function Pieces({ value, onChange, max = 5, label = 'Piezas' }) {
   </label>
 }
 
-function SetRows({ value = [], onChange, catalog }) {
+function SetRows({ value = [], onChange, catalog, revealOnOpen }) {
   return <OrderedRows items={value} onChange={onChange} limit={5} addLabel="Añadir set"
     add={() => ({ id: null, piezas: 1 })}
     render={(entry, update) => <div className="editor-inline">
-      <Picker inline label="Elegir set" items={catalog} value={entry.id} onChange={(id) => update({ ...entry, id })} />
+      <Picker inline revealOnOpen={revealOnOpen} label="Elegir set" items={catalog} value={entry.id}
+        onChange={(id) => update({ ...entry, id })} />
       <Pieces value={entry.piezas} onChange={(piezas) => update({ ...entry, piezas })} />
     </div>} />
 }
@@ -226,7 +292,7 @@ function TeamSupports({ team, onChange, catalog }) {
     return <div className="editor-fields">
       <Picker label={label} items={catalog.people.filter(({ id }) => !excluded.has(id))}
         value={support.id} disabled={disabled} onChange={(id) => update({ id, sets: [] })} />
-      <SetRows value={support.sets} catalog={catalog.sets}
+      <SetRows value={support.sets} catalog={catalog.sets} revealOnOpen
         onChange={(sets) => update({ ...support, sets })} />
     </div>
   }
@@ -239,7 +305,10 @@ function TeamSupports({ team, onChange, catalog }) {
           onChange={(id) => onChange([{ id, sets: [] }])} />
       )}
     </fieldset>
-    {main?.id && <details className="editor-support-alternatives">
+    {main?.id && <details className="editor-support-alternatives" onToggle={(event) => {
+      const panel = event.currentTarget
+      if (panel.open) revealEditorPanel(panel.firstElementChild, panel)
+    }}>
       <summary>Apoyos alternativos <span>{alternatives.length}</span></summary>
       <OrderedRows items={alternatives} onChange={(next) => onChange([main, ...next])}
         addLabel="Añadir alternativa" add={() => ({ id: null, sets: [] })}
@@ -285,7 +354,7 @@ function TeamForm({ value, onChange, catalog, characterId }) {
             const pair = team.pair.map((item, slot) => position === slot ? { id, sets: [] } : item)
             change({ ...team, pair })
           }} />
-        <SetRows value={member.sets} catalog={catalog.sets}
+        <SetRows value={member.sets} catalog={catalog.sets} revealOnOpen
           onChange={(sets) => change({ ...team, pair: team.pair.map((item, slot) => position === slot ? { ...item, sets } : item) })} />
       </fieldset>)}
       <TeamSupports team={team} onChange={(supports) => change({ ...team, supports })} catalog={catalog} />

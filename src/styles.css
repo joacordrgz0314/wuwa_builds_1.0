@@ -5,6 +5,7 @@
   --tide: #3fd0c9;
   --violet: #a78bdb;
   --weapon-blue: #75adff;
+  --weapon-green: #72cc97;
   --gold: #e8c15a;
   --ink: #e8ecf6;
   --mute: #8a95b5;
@@ -32,7 +33,7 @@ body {
 .app { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px; }
 .app-msg { color: var(--mute); }
 
-.upcoming { margin-bottom: 18px; }
+.upcoming { margin-bottom: 22px; }
 .upcoming h2 {
   margin: 0 0 8px;
   font-size: 1rem;
@@ -292,6 +293,8 @@ body {
 .build-weapons img { width: 56px; height: 56px; object-fit: contain; flex: 0 0 auto; }
 .build-weapons .app-msg { margin: 4px 0 0; }
 .build-stars { color: var(--violet); }
+.build-stars.rarity-1 { color: var(--mute); }
+.build-stars.rarity-2 { color: var(--weapon-green); }
 .build-stars.rarity-3 { color: var(--weapon-blue); }
 .build-stars.rarity-5 { color: var(--gold); }
 .build-team h4 { margin: 0 0 8px; font-size: 0.95rem; color: var(--ink); }
@@ -538,7 +541,7 @@ html { overflow-y: scroll; }
 }
 
 /* ---- fondo del inicio: el mismo ambiente de la pantalla de carga ---- */
-/* .ambient (solo en el inicio) = fondo oscuro con brillo turquesa, partículas que suben y gotas que caen en puntos al azar.
+/* .ambient = fondo oscuro con brillo turquesa, partículas que suben y gotas que caen en puntos al azar.
    Es fijo y va detrás del contenido; solo anima transform y opacity. El body no usa background-attachment: fixed, para no frenar el scroll. */
 .ambient {
   position: fixed;
@@ -718,8 +721,16 @@ html { overflow-y: scroll; }
 /* ---- menú lateral ---- */
 /* Columna fija de 240 px (sticky, a pantalla completa); en menos de 800 px pasa a barra superior. Sin backdrop-filter para no frenar el scroll. */
 @media (min-width: 801px) { :root { --vw: calc((100vw - 240px) / 100); } }
-.shell { display: flex; align-items: flex-start; }
-.shell > .app { flex: 1; min-width: 0; margin: 0 auto; }
+.shell { display: flex; align-items: flex-start; min-height: 100vh; min-height: 100dvh; }
+.shell > .app {
+  display: flex;
+  flex: 1 0 0%;
+  flex-direction: column;
+  align-self: stretch;
+  min-width: 0;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
 .side {
   position: sticky;
   top: 0;
@@ -821,13 +832,14 @@ html { overflow-y: scroll; }
   transform: rotate(45deg);
 }
 .app-footer {
+  --footer-gap: 40px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
-  margin-top: 40px;
-  padding: 20px 0 4px;
-  border-top: 1px solid rgba(63, 208, 201, 0.2);
+  margin-top: auto;
+  padding: calc(var(--footer-gap) + 21px) 0 4px;
+  background: linear-gradient(rgba(63, 208, 201, 0.2), rgba(63, 208, 201, 0.2)) no-repeat 0 var(--footer-gap) / 100% 1px;
   color: var(--mute);
   font-size: 0.8rem;
   line-height: 1.5;
@@ -910,7 +922,7 @@ html { overflow-y: scroll; }
   .side.is-menu-open .side-nav { display: flex; }
   .side-link { min-height: 44px; padding: 8px 10px; }
   .side-foot { display: none; }
-  .app-footer { flex-direction: column; align-items: stretch; gap: 16px; margin-top: 32px; }
+  .app-footer { --footer-gap: 32px; flex-direction: column; align-items: stretch; gap: 16px; }
   .app-footer-actions { align-items: flex-start; }
   .app-footer-version { display: inline; }
 }
@@ -1086,8 +1098,10 @@ a.team-tile:focus-visible {
   border-radius: 14px;
   background: linear-gradient(135deg, rgba(var(--elem-rgb), 0.1), rgba(4, 7, 15, 0.4));
 }
-.weapon-card.rarity-3 { --rar: var(--weapon-blue); }
-.weapon-card.rarity-5 { --rar: var(--gold); }
+:is(.weapon-card, .weapon-page-detail).rarity-1 { --rar: var(--mute); }
+:is(.weapon-card, .weapon-page-detail).rarity-2 { --rar: var(--weapon-green); }
+:is(.weapon-card, .weapon-page-detail).rarity-3 { --rar: var(--weapon-blue); }
+:is(.weapon-card, .weapon-page-detail).rarity-5 { --rar: var(--gold); }
 .weapon-icon {
   display: grid;
   place-items: center;
@@ -1095,10 +1109,122 @@ a.team-tile:focus-visible {
   height: 96px;
   border-radius: 12px;
   background:
-    radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--rar) 40%, transparent), transparent 70%),
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--rar) 40%, transparent), transparent 70%),
     rgba(6, 10, 24, 0.6);
 }
 .build-weapons .weapon-icon img { width: 84px; height: 84px; }
+.catalog-title {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.weapon-catalog-grid { grid-template-columns: repeat(auto-fill, minmax(min(245px, 100%), 1fr)); }
+.weapon-catalog-grid .weapon-card { display: flex; flex: 1; align-self: stretch; align-items: center; background: rgba(6, 10, 24, 0.65); }
+.weapon-catalog-grid .weapon-icon { flex: 0 0 64px; height: 64px; }
+.weapon-catalog-grid .weapon-icon img { width: 54px; height: 54px; }
+.weapon-catalog-info { display: grid; flex: 1; min-width: 0; gap: 3px; }
+.weapon-catalog-info .team-config-scroll { min-width: 0; overflow-x: hidden; }
+.weapon-catalog-type { color: var(--mute); font-size: 0.79rem; }
+.weapon-catalog-info .build-stars { letter-spacing: 0.12em; }
+@media (prefers-reduced-motion: no-preference) {
+  .weapon-catalog-link { transition: transform 0.15s ease; }
+  .weapon-catalog-link:hover { transform: translateY(-3px); }
+}
+
+.weapon-page-detail { --rar: var(--violet); --elem-rgb: 63, 208, 201; }
+.weapon-page-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(16px, 4vw, 64px);
+  min-height: 300px;
+  padding-block: 8px 20px;
+}
+.weapon-page-art {
+  display: grid;
+  width: min(100%, 265px);
+  aspect-ratio: 1;
+  justify-self: center;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--rar) 55%, transparent);
+  border-radius: 14px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--rar) 18%, var(--deep)), var(--void) 78%);
+}
+.weapon-page-art img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.weapon-page-summary .char-page-name { max-width: 100%; overflow-wrap: anywhere; }
+.weapon-page-stat-block { margin-top: 24px; }
+.weapon-page-stat-block h3 { margin: 0 0 10px; color: var(--mute); font-size: 0.9rem; font-weight: 500; }
+.weapon-page-stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; }
+.weapon-page-stats > .guide-stat { width: min(100%, 136px); }
+.weapon-page-stats dt { display: grid; justify-items: center; gap: 4px; overflow-wrap: anywhere; }
+.weapon-page-stats dd { margin: auto 0 0; font-variant-numeric: tabular-nums; }
+.weapon-page-passive { margin-top: 10px; }
+.weapon-page-effect {
+  padding: clamp(18px, 3vw, 32px);
+  border: 1px solid color-mix(in srgb, var(--rar) 30%, transparent);
+  border-radius: 0 0 14px 14px;
+  background: linear-gradient(160deg, rgba(15, 24, 56, 0.82), rgba(6, 10, 24, 0.55));
+}
+.weapon-page-passive > .weapon-page-effect:first-child { border-radius: 14px; }
+.weapon-page-effect h3 { margin: 0 0 10px; font: 400 1.35rem/1.3 Marcellus, Georgia, serif; }
+.weapon-refinement { min-width: 0; padding: 0; margin: 0; border: 0; }
+.weapon-refinement legend { padding: 0; color: var(--mute); font-size: 0.87rem; }
+.weapon-refinement-ranks {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  max-width: 380px;
+  margin-top: 6px;
+}
+.weapon-refinement-ranks::after {
+  position: absolute;
+  inset: auto auto 0 0;
+  width: 20%;
+  height: 2px;
+  background: var(--rar);
+  transform: translateX(calc(var(--rank-offset) * 100%));
+  pointer-events: none;
+  content: '';
+}
+.weapon-refinement label { position: relative; cursor: pointer; }
+.weapon-refinement input { position: absolute; width: 1px; height: 1px; margin: 0; opacity: 0; }
+.weapon-refinement span {
+  display: grid;
+  min-height: 44px;
+  place-items: center;
+  color: var(--mute);
+  font-weight: 600;
+}
+.weapon-refinement label:hover span { color: var(--ink); }
+.weapon-refinement input:checked + span { color: var(--rar); }
+.weapon-refinement input:focus-visible + span { outline: 2px solid var(--tide); outline-offset: -3px; }
+.weapon-page-description { max-width: 72ch; margin: 0; line-height: 1.65; white-space: pre-line; }
+.weapon-page-description strong { color: var(--rar); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .weapon-refinement-ranks::after { transition: transform 0.22s ease; }
+  .weapon-page-description .is-changed { animation: weapon-value-change 0.55s ease-out; }
+}
+
+@keyframes weapon-value-change {
+  from { color: var(--ink); text-shadow: 0 0 12px var(--rar); }
+}
+
+@media (max-width: 620px) {
+  .weapon-page-head { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-bottom: 0; }
+  .weapon-page-summary { display: contents; }
+  .weapon-page-art { grid-row: 2; width: min(100%, 190px); }
+  .weapon-page-stat-block { grid-row: 3; margin-top: 0; text-align: center; }
+  .weapon-page-stats { justify-content: center; }
+}
+
 .weapon-body { min-width: 0; }
 .weapon-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
 .weapon-badge {
@@ -1560,7 +1686,7 @@ a.team-tile:focus-visible { box-shadow: 0 6px 16px -6px rgba(255, 255, 255, 0.55
 }
 .guide-stat img { width: 28px; height: 28px; object-fit: contain; }
 .guide-stat span { font-size: 0.74rem; color: var(--mute); }
-.guide-stat b { font-family: 'Cinzel', 'Marcellus', Georgia, serif; font-size: 1.05rem; font-weight: 600; }
+.guide-stat b, .weapon-page-stats dd { font-family: 'Cinzel', 'Marcellus', Georgia, serif; font-size: 1.05rem; font-weight: 600; }
 .guide-skills { gap: 14px; }
 .guide-skill { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 88px; text-align: center; font-size: 0.74rem; line-height: 1.25; }
 .guide-skill-icon {

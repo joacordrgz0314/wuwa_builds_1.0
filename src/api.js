@@ -338,7 +338,7 @@ function formatStat(value) {
     : Math.round(n).toLocaleString("es");
 }
 
-// Desc trae HTML con grupos "a/b/c/d/e" (refinamientos 1 a 5): se deja el refinamiento 1 y se devuelven segmentos { text, hl }.
+// Desc trae HTML con grupos "a/b/c/d/e" para los refinamientos 1 a 5.
 function parseWeaponDesc(html) {
   if (!html) return [];
   const clean = html.replace(/<br\s*\/?>/gi, "\n");
@@ -347,7 +347,13 @@ function parseWeaponDesc(html) {
   for (const m of clean.matchAll(/<span[^>]*>([\s\S]*?)<\/span>/gi)) {
     const before = clean.slice(last, m.index).replace(/<[^>]+>/g, "");
     if (before) parts.push({ text: before, hl: false });
-    parts.push({ text: m[1].replace(/<[^>]+>/g, "").split("/")[0], hl: true });
+    const value = m[1].replace(/<[^>]+>/g, '')
+    const values = value.split('/')
+    parts.push({
+      text: value,
+      hl: true,
+      ...(values.length === 5 ? { values } : {}),
+    })
     last = m.index + m[0].length;
   }
   const rest = clean.slice(last).replace(/<[^>]+>/g, "");
@@ -355,7 +361,7 @@ function parseWeaponDesc(html) {
   return parts;
 }
 
-function getWeaponDetail(id) {
+export function getWeaponDetail(id) {
   if (!weaponDetailCache.has(id)) {
     const promise = fetchJson(`/weapon/${id}`)
       .then((d) => ({
@@ -371,10 +377,10 @@ function getWeaponDetail(id) {
         }),
         stats: (d.Properties ?? []).slice(0, 2).map((p) => {
           const last = (p.GrowthValues ?? []).at(-1);
-          // El icono viene como /Game/.../T_X.T_X: se quita el sufijo repetido para pedir el .webp
+          // Encore devuelve UiResources para algunos iconos de PS, pero la ruta distingue mayúsculas.
           const icon = p.Icon
-            ? `${ORIGIN}/resource/Data${p.Icon.replace(/\.[^./]+$/, "")}.webp`
-            : "";
+            ? `${ORIGIN}/resource/Data${p.Icon.replace('/UiResources/', '/UIResources/').replace(/\.[^./]+$/, '')}.webp`
+            : ''
           return {
             name: p.Name,
             icon,
@@ -594,6 +600,6 @@ export function preloadFirst(list, base) {
 export function getWeaponDesc(id) {
   return getWeaponDetail(id).then((d) => ({
     passive: d.passive,
-    desc: d.desc,
+    desc: d.desc.map(({ text, hl }) => ({ text: hl ? text.split('/')[0] : text, hl })),
   }));
 }
