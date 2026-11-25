@@ -1,3 +1,33 @@
+- **2026-11-24** — [Versionado de cambios del editor local](173-2026-11-24-versionado-editor-local.md) — documentación · v0.18.9
+- **2026-11-24** — [Bordes de rareza y marco blanco en Armas](172-2026-11-24-bordes-rareza-armas.md) — comprobado en ranking de muestra · v0.18.9
+- **2026-11-24** — [Fondo y marco azules para armas de tres estrellas](171-2026-11-24-fondo-azul-armas.md) — ranking de Cartethyia comprobado en muestra de Chrome · v0.18.9
+- **2026-11-24** — [Rareza azul para armas de tres estrellas](170-2026-11-24-armas-tres-estrellas.md) — Encore y muestra de Chrome verificados · v0.18.9
+- **2026-11-24** — [Menú móvil desplegable que se oculta al bajar](169-2026-11-24-menu-movil-desplegable.md) — comportamiento comprobado en Chrome · v0.18.8
+- **2026-11-24** — [Valor fijo en subestadísticas móviles](168-2026-11-24-valor-fijo-subestadisticas.md) — componentes comprobados en Chrome · v0.18.7
+- **2026-11-24** — [Desvanecido en subestadísticas de Ecos en móvil](167-2026-11-24-subestadisticas-movil.md) — componentes comprobados en Chrome · v0.18.7
+- **2026-11-24** — [Inicio deshabilitado con etiqueta Pronto](166-2026-11-24-inicio-pronto.md) — comprobado en muestra de Chrome · v0.18.6
+- **2026-11-24** — [Inicio y Personajes en el menú](165-2026-11-24-inicio-menu.md) — rutas y encaje verificados por separado · v0.18.6
+- **2026-11-24** — [Tres filas por personaje en Próximamente móvil](164-2026-11-24-proximamente-movil-tres-filas.md) — comprobado en muestra de Chrome · v0.18.5
+- **2026-11-24** — [Enlace de Encore sin subrayado en reposo](163-2026-11-24-enlace-encore.md) — CSS y foco verificados en Chrome · v0.18.4
+- **2026-11-24** — [Emblema junto al nombre en el pie](162-2026-11-24-emblema-en-el-pie.md) — comprobado en muestra de Chrome · v0.18.4
+- **2026-11-24** — [Créditos y navegación en el pie de página](161-2026-11-24-creditos-pie-de-pagina.md) — comprobado en muestra de Chrome · v0.18.4
+- **2026-11-24** — [Pie de página en el catálogo y las fichas](160-2026-11-24-pie-de-pagina.md) — comprobado en muestra de Chrome · v0.18.4
+- **2026-11-24** — [Emblema centrado encima del nombre](159-2026-11-24-emblema-centrado.md) — probado en muestra de Chrome · v0.18.3
+- **2026-11-24** — [Emblema circular en el menú y la pestaña](158-2026-11-24-emblema-tacet-builds.md) — probado en muestra de Chrome · v0.18.3
+- **2026-11-24** — [Letras TB más visibles en el favicon](157-2026-11-24-favicon-tb-legible.md) — revisado a tamaño nativo · v0.18.3
+- **2026-11-24** — [Favicon transparente con las letras TB](156-2026-11-24-favicon-transparente-tb.md) — PNG revisados a tamaño nativo · v0.18.3
+- **2026-11-24** — [Favicon de Tacet Builds](155-2026-11-24-favicon-tacet-builds.md) — PNG y rutas verificados · v0.18.3
+- **2026-11-24** — [Cuatro píxeles bajo el subtítulo de carga](154-2026-11-24-cuatro-pixeles-subtitulo.md) — verificado en muestra de Chrome · v0.18.2
+- **2026-11-24** — [Espacio inferior del subtítulo de carga](153-2026-11-24-espacio-subtitulo-carga.md) — verificado en muestra de Chrome · v0.18.2
+- **2026-11-24** — [Separación del título y la barra de carga](152-2026-11-24-separacion-titulo-carga.md) — CSS verificado · v0.18.2
+- **2026-11-24** — [Tacet Builds como nombre del sitio](151-2026-11-24-tacet-builds.md) — esbuild y disposición verificados en muestra aislada · v0.18.1
+- **2026-11-24** — [Segundo bloque de coste 4 en el editor](150-2026-11-24-segundo-coste-4-editor.md) — guardado aislado verificado · v0.18.0
+- **2026-11-23** — [Fecha de última actualización por ficha](149-2026-11-23-fecha-actualizacion-fichas.md) — verificado en Chrome y con guardado aislado · v0.17.0
+- **2026-11-23** — [Versionado por ajuste e iteraciones](148-2026-11-23-versionado-por-ajuste.md) — documentación · v0.16.46
+- **2026-11-23** — [Distribución a todo ancho en Próximamente](147-2026-11-23-proximamente-ancho-completo.md) — verificado en Chrome · v0.16.46
+- **2026-11-23** — [Barras compactas en Próximamente](146-2026-11-23-barras-compactas-proximamente.md) — revisión visual pendiente · v0.16.45
+- **2026-11-23** — [Jerarquía visual en Próximamente](145-2026-11-23-jerarquia-proximamente.md) — verificado en Chrome · v0.16.44
+- **2026-11-23** — [Esquinas suaves en las barras de Próximamente](144-2026-11-23-esquinas-proximamente.md) — verificado en Chrome · v0.16.43
 - **2026-11-22** — [Limpieza de CSS de Equipos y catálogo de arte legado](143-2026-11-22-limpieza-codigo.md) — v0.16.42
 - **2026-11-22** — [Modos de resonancia y alineación de Ecos en móvil](142-2026-11-22-modos-ecos-movil.md) — v0.16.41
 - **2026-11-22** — [Icono de tarjeta solo como respaldo final](141-2026-11-22-icono-respaldo-final.md) — v0.16.40

@@ -23,7 +23,7 @@ Sitio personal de Wuthering Waves. React 18, Vite 5, JavaScript ESM y CSS plano.
 
 - Usa pnpm, hooks, dos espacios, comillas simples, comas finales multilínea y código sin punto y coma. Interfaz y comentarios en español. Dependencias, tests y linter requieren aprobación.
 - Integra Encore en `src/api.js`, verifica los recursos y consulta muestras acotadas. Los datos se consumen en vivo. Usa caché en memoria cuando corresponda. Cualquier otro almacenamiento requiere aprobación.
-- Si cambia la web, actualiza la versión en `package.json` según el alcance. Documentación sola conserva la versión.
+- Cada ajuste nuevo e independiente de la web sube la versión en `package.json` según su alcance. Las iteraciones del mismo ajuste abierto conservan la versión hasta el cierre o la publicación, salvo que el alcance requiera un salto mayor. La documentación y los cambios exclusivos del editor local conservan la versión. Si un cambio del editor afecta los datos que consume la web pública o cómo se muestran, se versiona según ese impacto.
 - Si cambia JSX, verifica con esbuild. Para cambios visuales, revisa escritorio a 1440 × 900 y el movimiento reducido si aplica. Evita `pnpm build` en el sandbox. Reporta las verificaciones pendientes y detén los servidores que hayas iniciado.
 - Cierra con un handoff breve y añade su entrada al principio de `handoffs/INDEX.md`. Para cambios pequeños bastan pedido, decisión, archivos, versión, verificación y pendientes. Conserva el historial.
 - Git requiere aprobación para inicializar. Los tags, commits de release y push corresponden al usuario.

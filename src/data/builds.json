@@ -200,7 +200,7 @@
         ]
       },
       {
-        "nombre": "Hiyuki + Lynae (Ruptura de tonalidad)",
+        "nombre": "Hiyuki + Lynae (Impacto de tonalidad)",
         "miembros": [
           {
             "id": 1108,
@@ -353,7 +353,7 @@
         ]
       },
       {
-        "nombre": "Hiyuki + Chisa",
+        "nombre": "Hiyuki + Chisa (Rozadura gélida)",
         "miembros": [
           {
             "id": 1108,
@@ -400,7 +400,8 @@
         "variantes": []
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1109": {
     "ecos": {
@@ -908,9 +909,183 @@
             ]
           }
         ]
+      },
+      {
+        "nombre": "Phrolova + Lucilla",
+        "miembros": [
+          {
+            "id": 1608,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1109,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1212,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1109,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1212,
+            "sets": [
+              {
+                "id": 35,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1413,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1109,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1610,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1109,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1610,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1411,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1109,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1411,
+                  "sets": [
+                    {
+                      "id": 21,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 4,
+                      "piezas": 2
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1110": {
     "ecos": {
@@ -946,6 +1121,17 @@
           "nombre": "Prob. CRIT",
           "valor": "20%",
           "iconKey": "critProb"
+        }
+      ],
+      "alternativas": [
+        {
+          "sets": [
+            {
+              "id": 7,
+              "piezas": 5
+            }
+          ],
+          "ecoPrincipal": 390080005
         }
       ]
     },
@@ -1150,7 +1336,8 @@
         "variantes": []
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-24"
   },
   "1202": {
     "ecos": {
@@ -1194,37 +1381,1511 @@
   },
   "1207": {
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: Prob. CRIT + Daño CRIT",
+        "Coste 3: Daño Fusión % + ATQ %",
+        "Coste 1: 2 × ATQ %"
+      ],
+      "ecoPrincipal": 6000114,
+      "sets": [
+        {
+          "id": 18,
+          "piezas": 5
+        }
+      ],
+      "alternativas": [
+        {
+          "sets": []
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "70% ",
+          "iconKey": "critProb"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "260% ",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "Regen. de energía",
+          "valor": "115% - 120%",
+          "iconKey": "energia"
+        },
+        {
+          "nombre": "ATQ",
+          "valor": "2200",
+          "iconKey": "atq"
+        },
+        {
+          "nombre": "Bonificación de liberación de resonancia",
+          "valor": "30%",
+          "iconKey": "liberation"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21010036,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21010026,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21010045,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21010084,
+        "refinamiento": "R5",
+        "f2p": true
+      },
+      {
+        "id": 21010104,
+        "refinamiento": "R1",
+        "bp": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Jingran + Mortefi",
+        "miembros": [
+          {
+            "id": 1212,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1204,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1207,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1212,
+            "sets": [
+              {
+                "id": 35,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1204,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1207,
+            "sets": [
+              {
+                "id": 18,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Jingran + Lupa",
+        "miembros": [
+          {
+            "id": 1212,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1207,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1212,
+            "sets": [
+              {
+                "id": 35,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1207,
+            "sets": [
+              {
+                "id": 18,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1207,
+                  "sets": [
+                    {
+                      "id": 18,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1207,
+                  "sets": [
+                    {
+                      "id": 18,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1110,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1202,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1207,
+                  "sets": [
+                    {
+                      "id": 18,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1202,
+                  "sets": [
+                    {
+                      "id": 2,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1207,
+                  "sets": [
+                    {
+                      "id": 18,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Aemeath + Denia (Estallido de fusión)",
+        "miembros": [
+          {
+            "id": 1210,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1211,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1207,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1210,
+            "sets": [
+              {
+                "id": 27,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1211,
+            "sets": [
+              {
+                "id": 28,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1207,
+            "sets": [
+              {
+                "id": 18,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Jingran + Brant",
+        "miembros": [
+          {
+            "id": 1212,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1206,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1207,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1212,
+            "sets": [
+              {
+                "id": 35,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1206,
+            "sets": [
+              {
+                "id": 14,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1207,
+            "sets": [
+              {
+                "id": 18,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-24"
   },
   "1208": {
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: Prob. CRIT + Daño CRIT",
+        "Coste 3: Daño Fusión % + ATQ %",
+        "Coste 1: 2 × ATQ %"
+      ],
+      "ecoPrincipal": 6000120,
+      "sets": [
+        {
+          "id": 22,
+          "piezas": 3
+        },
+        {
+          "id": 18,
+          "piezas": 2
+        }
+      ],
+      "alternativas": [
+        {
+          "sets": [
+            {
+              "id": 22,
+              "piezas": 3
+            },
+            {
+              "id": 9,
+              "piezas": 2
+            }
+          ],
+          "ecoPrincipal": 6000120
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "65% - ",
+          "iconKey": "critProb"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "280% - 290%",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "Regen. de energía",
+          "valor": "120%",
+          "iconKey": "energia"
+        },
+        {
+          "nombre": "ATQ",
+          "valor": "2350",
+          "iconKey": "atq"
+        },
+        {
+          "nombre": "Bonificación de daño de ataque cargado",
+          "valor": "30%",
+          "iconKey": "chargedAttack"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21030036,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21030045,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21030056,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21030084,
+        "refinamiento": "R5",
+        "f2p": true
+      },
+      {
+        "id": 21030094,
+        "refinamiento": "R5",
+        "f2p": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Galbrena + Qiuyuan",
+        "miembros": [
+          {
+            "id": 1208,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1411,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1608,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1208,
+            "sets": [
+              {
+                "id": 22,
+                "piezas": 3
+              },
+              {
+                "id": 18,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1411,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1208,
+                  "sets": [
+                    {
+                      "id": 22,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 18,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1411,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1208,
+                  "sets": [
+                    {
+                      "id": 22,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 18,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1411,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Galbrena + Lucilla",
+        "miembros": [
+          {
+            "id": 1208,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1109,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1208,
+            "sets": [
+              {
+                "id": 22,
+                "piezas": 3
+              },
+              {
+                "id": 18,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1109,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1512,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1208,
+                  "sets": [
+                    {
+                      "id": 22,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 18,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1109,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Galbrena + Phrolova",
+        "miembros": [
+          {
+            "id": 1208,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1608,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1607,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1208,
+            "sets": [
+              {
+                "id": 22,
+                "piezas": 3
+              },
+              {
+                "id": 18,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1607,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1209": {
     "guia": [],
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: DEF % + Daño CRIT",
+        "Coste 3: Regen. de energía + Daño Fusión %",
+        "Coste 1: 2 × DEF %"
+      ],
+      "ecoPrincipal": 6000190,
+      "sets": [
+        {
+          "id": 25,
+          "piezas": 5
+        }
+      ],
+      "alternativas": [
+        {
+          "sets": [
+            {
+              "id": 7,
+              "piezas": 5
+            }
+          ],
+          "ecoPrincipal": 6000060
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Regen. de energía",
+          "valor": "260%",
+          "iconKey": "energia"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "200% - 210%",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "DEF",
+          "valor": "3200 - 3500",
+          "iconKey": "def"
+        },
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "20%",
+          "iconKey": "critProb"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21010066,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21010024,
+        "refinamiento": "R5",
+        "f2p": true
+      },
+      {
+        "id": 21010034,
+        "refinamiento": "R5",
+        "f2p": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Qingxiao + Denia (Tensión de tonalidad)",
+        "miembros": [
+          {
+            "id": 1413,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1211,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1413,
+            "sets": [
+              {
+                "id": 34,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1211,
+            "sets": [
+              {
+                "id": 31,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Qingxiao + Lynae (Tensión de tonalidad)",
+        "miembros": [
+          {
+            "id": 1413,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1413,
+            "sets": [
+              {
+                "id": 34,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Hsin + Suoming (Unísono)",
+        "miembros": [
+          {
+            "id": 1311,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1312,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1311,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1312,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Aemeath + Lynae (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1210,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1210,
+            "sets": [
+              {
+                "id": 27,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1210": {
     "guia": [],
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: Prob. CRIT + Daño CRIT",
+        "Coste 3: Daño Fusión % + ATQ %",
+        "Coste 1: 2 × ATQ %"
+      ],
+      "ecoPrincipal": 6000191,
+      "sets": [
+        {
+          "id": 27,
+          "piezas": 5
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "70% - 80%",
+          "iconKey": "critProb"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "255% - 270%",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "Regen. de energía",
+          "valor": "120%",
+          "iconKey": "energia"
+        },
+        {
+          "nombre": "ATQ",
+          "valor": "2300 - 2800",
+          "iconKey": "atq"
+        },
+        {
+          "nombre": "Bonificación de liberación de resonancia",
+          "valor": "30% - 40%",
+          "iconKey": "liberation"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21020076,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21020026,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21020015,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21020045,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21020104,
+        "refinamiento": "R1",
+        "bp": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Aemeath + Lynae (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1210,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1210,
+            "sets": [
+              {
+                "id": 27,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1508,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1210,
+                  "sets": [
+                    {
+                      "id": 27,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1508,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1210,
+                  "sets": [
+                    {
+                      "id": 27,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1210,
+                  "sets": [
+                    {
+                      "id": 27,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1110,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1210,
+                  "sets": [
+                    {
+                      "id": 27,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Aemeath + Denia (Estallido de fusión)",
+        "miembros": [
+          {
+            "id": 1210,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1211,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1207,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1210,
+            "sets": [
+              {
+                "id": 27,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1211,
+            "sets": [
+              {
+                "id": 28,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1207,
+            "sets": [
+              {
+                "id": 18,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1508,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1210,
+                  "sets": [
+                    {
+                      "id": 27,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1211,
+                  "sets": [
+                    {
+                      "id": 28,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1508,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1210,
+                  "sets": [
+                    {
+                      "id": 27,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1211,
+                  "sets": [
+                    {
+                      "id": 28,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1110,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Aemeath + Lupa (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1210,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1207,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1210,
+            "sets": [
+              {
+                "id": 27,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1207,
+            "sets": [
+              {
+                "id": 18,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Aemeath + Changli (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1210,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1205,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1207,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1210,
+            "sets": [
+              {
+                "id": 27,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1205,
+            "sets": [
+              {
+                "id": 2,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1207,
+            "sets": [
+              {
+                "id": 18,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1211": {
     "ecos": {
@@ -1424,53 +3085,6 @@
         ]
       },
       {
-        "nombre": "Luuk Herssen + Denia (Tensión de tonalidad)",
-        "miembros": [
-          {
-            "id": 1510,
-            "rol": "DPS principal"
-          },
-          {
-            "id": 1211,
-            "rol": "Sub-DPS"
-          },
-          {
-            "id": 1209,
-            "rol": "Apoyo"
-          }
-        ],
-        "configuracion": [
-          {
-            "id": 1510,
-            "sets": [
-              {
-                "id": 26,
-                "piezas": 5
-              }
-            ]
-          },
-          {
-            "id": 1211,
-            "sets": [
-              {
-                "id": 31,
-                "piezas": 5
-              }
-            ]
-          },
-          {
-            "id": 1209,
-            "sets": [
-              {
-                "id": 25,
-                "piezas": 5
-              }
-            ]
-          }
-        ],
-        "variantes": []
-      },
-      {
         "nombre": "Aemeath + Denia (Estallido de fusión)",
         "miembros": [
           {
@@ -1509,7 +3123,7 @@
             "id": 1207,
             "sets": [
               {
-                "id": 22,
+                "id": 18,
                 "piezas": 5
               }
             ]
@@ -1557,11 +3171,11 @@
         "nombre": "Jingran + Denia (Estallido de fusión)",
         "miembros": [
           {
-            "id": 1212,
+            "id": 1211,
             "rol": "DPS principal"
           },
           {
-            "id": 1211,
+            "id": 1212,
             "rol": "Sub-DPS"
           },
           {
@@ -1570,15 +3184,6 @@
           }
         ],
         "configuracion": [
-          {
-            "id": 1212,
-            "sets": [
-              {
-                "id": 35,
-                "piezas": 5
-              }
-            ]
-          },
           {
             "id": 1211,
             "sets": [
@@ -1589,10 +3194,66 @@
             ]
           },
           {
+            "id": 1212,
+            "sets": [
+              {
+                "id": 35,
+                "piezas": 5
+              }
+            ]
+          },
+          {
             "id": 1207,
             "sets": [
               {
-                "id": 22,
+                "id": 18,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Luuk Herssen + Denia (Tensión de tonalidad)",
+        "miembros": [
+          {
+            "id": 1510,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1211,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1510,
+            "sets": [
+              {
+                "id": 26,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1211,
+            "sets": [
+              {
+                "id": 31,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
                 "piezas": 5
               }
             ]
@@ -1601,7 +3262,8 @@
         "variantes": []
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1212": {
     "ecos": {
@@ -1935,6 +3597,53 @@
         ]
       },
       {
+        "nombre": "Jingran + Mortefi",
+        "miembros": [
+          {
+            "id": 1212,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1204,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1207,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1212,
+            "sets": [
+              {
+                "id": 35,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1204,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1207,
+            "sets": [
+              {
+                "id": 18,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
         "nombre": "Jingran + Lupa",
         "miembros": [
           {
@@ -2088,18 +3797,18 @@
         ]
       },
       {
-        "nombre": "Jingran + Mortefi",
+        "nombre": "Jingran + Phrolova",
         "miembros": [
           {
             "id": 1212,
             "rol": "DPS principal"
           },
           {
-            "id": 1204,
+            "id": 1608,
             "rol": "Sub-DPS"
           },
           {
-            "id": 1207,
+            "id": 1110,
             "rol": "Apoyo"
           }
         ],
@@ -2114,28 +3823,190 @@
             ]
           },
           {
-            "id": 1204,
+            "id": 1608,
             "sets": [
               {
-                "id": 8,
-                "piezas": 5
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
               }
             ]
           },
           {
-            "id": 1207,
+            "id": 1110,
             "sets": [
               {
-                "id": 18,
+                "id": 33,
                 "piezas": 5
               }
             ]
           }
         ],
-        "variantes": []
+        "variantes": [
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1209,
+                  "sets": [
+                    {
+                      "id": 25,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1503,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1503,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1301": {
     "ecos": {
@@ -2179,19 +4050,616 @@
   },
   "1306": {
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: Prob. CRIT",
+        "Coste 3: Daño Electro % + ATQ %",
+        "Coste 1: 2 × ATQ %"
+      ],
+      "ecoPrincipal": 6000121,
+      "sets": [
+        {
+          "id": 20,
+          "piezas": 3
+        },
+        {
+          "id": 3,
+          "piezas": 2
+        }
+      ],
+      "alternativas": [
+        {
+          "sets": [
+            {
+              "id": 20,
+              "piezas": 3
+            },
+            {
+              "id": 9,
+              "piezas": 2
+            }
+          ],
+          "ecoPrincipal": 6000121
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "85%",
+          "iconKey": "critProb"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "220%",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "Regen. de energía",
+          "valor": "125%",
+          "iconKey": "energia"
+        },
+        {
+          "nombre": "ATQ",
+          "valor": "2300",
+          "iconKey": "atq"
+        },
+        {
+          "nombre": "Bonificación de daño de ataque cargado",
+          "valor": "20%",
+          "iconKey": "chargedAttack"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21010046,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21010016,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21010045,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21010015,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21010084,
+        "refinamiento": "R5",
+        "f2p": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Hsin + Augusta (Llamarada eléctrica)",
+        "miembros": [
+          {
+            "id": 1311,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1306,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1311,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1306,
+            "sets": [
+              {
+                "id": 20,
+                "piezas": 3
+              },
+              {
+                "id": 3,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1110,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Rebecca + Augusta",
+        "miembros": [
+          {
+            "id": 1308,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1306,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1312,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1308,
+            "sets": [
+              {
+                "id": 32,
+                "piezas": 1
+              },
+              {
+                "id": 3,
+                "piezas": 2
+              },
+              {
+                "id": 9,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1306,
+            "sets": [
+              {
+                "id": 20,
+                "piezas": 3
+              },
+              {
+                "id": 3,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1312,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Augusta + Iuno (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1306,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1410,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1509,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1306,
+            "sets": [
+              {
+                "id": 20,
+                "piezas": 3
+              },
+              {
+                "id": 3,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1410,
+            "sets": [
+              {
+                "id": 20,
+                "piezas": 3
+              },
+              {
+                "id": 4,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1306,
+                  "sets": [
+                    {
+                      "id": 20,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 3,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1410,
+                  "sets": [
+                    {
+                      "id": 20,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 4,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Suoming + Augusta",
+        "miembros": [
+          {
+            "id": 1312,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1306,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1312,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1306,
+            "sets": [
+              {
+                "id": 20,
+                "piezas": 3
+              },
+              {
+                "id": 3,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1512,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1307": {
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: Prob. CRIT + Daño CRIT",
+        "Coste 3: Regen. de energía + Daño Electro %",
+        "Coste 1: 2 × ATQ %"
+      ],
+      "ecoPrincipal": 6000060,
+      "sets": [
+        {
+          "id": 7,
+          "piezas": 5
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Regen. de energía",
+          "valor": "130%",
+          "iconKey": "energia"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "210% 220%",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "60% - 65%",
+          "iconKey": "critProb"
+        },
+        {
+          "nombre": "ATQ",
+          "valor": "1700 - 1900",
+          "iconKey": "atq"
+        },
+        {
+          "nombre": "Bonificación de liberación de resonancia",
+          "valor": "15%",
+          "iconKey": "liberation"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21050015,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21050094,
+        "refinamiento": "R5",
+        "f2p": true
+      },
+      {
+        "id": 21050104,
+        "refinamiento": "R1",
+        "bp": true
+      },
+      {
+        "id": 21050084,
+        "refinamiento": "R5",
+        "f2p": true
+      },
+      {
+        "id": 21050074,
+        "refinamiento": "R1",
+        "bp": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Hsin + Suoming (Unísono)",
+        "miembros": [
+          {
+            "id": 1311,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1312,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1307,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1311,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1312,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1307,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Jingran + Iuno",
+        "miembros": [
+          {
+            "id": 1212,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1410,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1307,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1212,
+            "sets": [
+              {
+                "id": 35,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1410,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1307,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Hsin + Buling",
+        "miembros": [
+          {
+            "id": 1311,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1307,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1508,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1311,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1307,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1508,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Qingxiao + Lynae (Tensión de tonalidad)",
+        "miembros": [
+          {
+            "id": 1413,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1307,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1413,
+            "sets": [
+              {
+                "id": 34,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1307,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1308": {
     "ecos": {
@@ -2455,9 +4923,227 @@
             ]
           }
         ]
+      },
+      {
+        "nombre": "Rebecca + Hsin (Unísono)",
+        "miembros": [
+          {
+            "id": 1308,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1311,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1312,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1308,
+            "sets": [
+              {
+                "id": 32,
+                "piezas": 1
+              },
+              {
+                "id": 3,
+                "piezas": 2
+              },
+              {
+                "id": 9,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1311,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1312,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Yangyang: Xuanling + Rebecca",
+        "miembros": [
+          {
+            "id": 1610,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1308,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1610,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1308,
+            "sets": [
+              {
+                "id": 32,
+                "piezas": 1
+              },
+              {
+                "id": 3,
+                "piezas": 2
+              },
+              {
+                "id": 9,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1110,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1508,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1610,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1308,
+                  "sets": [
+                    {
+                      "id": 32,
+                      "piezas": 1
+                    },
+                    {
+                      "id": 3,
+                      "piezas": 2
+                    },
+                    {
+                      "id": 9,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1508,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Rebecca + Lynae (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1308,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1511,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1308,
+            "sets": [
+              {
+                "id": 32,
+                "piezas": 1
+              },
+              {
+                "id": 3,
+                "piezas": 2
+              },
+              {
+                "id": 9,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1511,
+            "sets": [
+              {
+                "id": 32,
+                "piezas": 1
+              },
+              {
+                "id": 5,
+                "piezas": 2
+              },
+              {
+                "id": 11,
+                "piezas": 2
+              }
+            ]
+          }
+        ],
+        "variantes": []
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1309": {
     "ecos": {
@@ -2650,7 +5336,8 @@
         ]
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1311": {
     "guia": [
@@ -3309,7 +5996,8 @@
         ]
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1312": {
     "guia": [
@@ -3587,6 +6275,64 @@
         ]
       },
       {
+        "nombre": "Lucy + Rebecca",
+        "miembros": [
+          {
+            "id": 1511,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1308,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1312,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1511,
+            "sets": [
+              {
+                "id": 32,
+                "piezas": 1
+              },
+              {
+                "id": 5,
+                "piezas": 2
+              },
+              {
+                "id": 11,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1308,
+            "sets": [
+              {
+                "id": 32,
+                "piezas": 1
+              },
+              {
+                "id": 3,
+                "piezas": 2
+              },
+              {
+                "id": 9,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1312,
+            "sets": []
+          }
+        ],
+        "variantes": []
+      },
+      {
         "nombre": "Suoming + Lynae (Impacto de tonalidad)",
         "miembros": [
           {
@@ -3740,18 +6486,18 @@
         ]
       },
       {
-        "nombre": "Suoming + Sanhua",
+        "nombre": "Suoming + Lucy",
         "miembros": [
           {
             "id": 1312,
             "rol": "DPS principal"
           },
           {
-            "id": 1102,
+            "id": 1511,
             "rol": "Sub-DPS"
           },
           {
-            "id": 1512,
+            "id": 1110,
             "rol": "Apoyo"
           }
         ],
@@ -3766,19 +6512,27 @@
             ]
           },
           {
-            "id": 1102,
+            "id": 1511,
             "sets": [
               {
-                "id": 8,
-                "piezas": 5
+                "id": 32,
+                "piezas": 1
+              },
+              {
+                "id": 5,
+                "piezas": 2
+              },
+              {
+                "id": 11,
+                "piezas": 2
               }
             ]
           },
           {
-            "id": 1512,
+            "id": 1110,
             "sets": [
               {
-                "id": 38,
+                "id": 33,
                 "piezas": 5
               }
             ]
@@ -3800,11 +6554,19 @@
                   ]
                 },
                 {
-                  "id": 1102,
+                  "id": 1511,
                   "sets": [
                     {
-                      "id": 8,
-                      "piezas": 5
+                      "id": 32,
+                      "piezas": 1
+                    },
+                    {
+                      "id": 5,
+                      "piezas": 2
+                    },
+                    {
+                      "id": 11,
+                      "piezas": 2
                     }
                   ]
                 },
@@ -3819,11 +6581,141 @@
                 }
               ]
             ]
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1312,
+                  "sets": [
+                    {
+                      "id": 36,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1511,
+                  "sets": [
+                    {
+                      "id": 32,
+                      "piezas": 1
+                    },
+                    {
+                      "id": 5,
+                      "piezas": 2
+                    },
+                    {
+                      "id": 11,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1312,
+                  "sets": [
+                    {
+                      "id": 36,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1511,
+                  "sets": [
+                    {
+                      "id": 32,
+                      "piezas": 1
+                    },
+                    {
+                      "id": 5,
+                      "piezas": 2
+                    },
+                    {
+                      "id": 11,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1209,
+                  "sets": [
+                    {
+                      "id": 25,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1503,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1312,
+                  "sets": [
+                    {
+                      "id": 36,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1511,
+                  "sets": [
+                    {
+                      "id": 32,
+                      "piezas": 1
+                    },
+                    {
+                      "id": 5,
+                      "piezas": 2
+                    },
+                    {
+                      "id": 11,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1503,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
           }
         ]
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1402": {
     "ecos": {
@@ -3875,27 +6767,1264 @@
   },
   "1409": {
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: Prob. CRIT + Daño CRIT",
+        "Coste 4: Daño CRIT",
+        "Coste 1: 3 × PS %"
+      ],
+      "ecoPrincipal": 6000106,
+      "sets": [
+        {
+          "id": 17,
+          "piezas": 5
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "70% - 75%",
+          "iconKey": "critProb"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "255% - 270%",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "Regen. de energía",
+          "valor": "115% - 120%",
+          "iconKey": "energia"
+        },
+        {
+          "nombre": "PS",
+          "valor": "49000 - 51000",
+          "iconKey": "ps"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21020056,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21020026,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21020015,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21020104,
+        "refinamiento": "R1",
+        "bp": true
+      },
+      {
+        "id": 21020053,
+        "refinamiento": "R5",
+        "f2p": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Cartethyia + Ciaccona",
+        "miembros": [
+          {
+            "id": 1409,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1407,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1508,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1409,
+            "sets": [
+              {
+                "id": 17,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1407,
+            "sets": [
+              {
+                "id": 16,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1508,
+            "sets": [
+              {
+                "id": 23,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Cartethyia + Lynae",
+        "miembros": [
+          {
+            "id": 1409,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1508,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1409,
+            "sets": [
+              {
+                "id": 17,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1508,
+            "sets": [
+              {
+                "id": 23,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-24"
   },
   "1410": {
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: Prob. CRIT + Daño CRIT",
+        "Coste 3: Daño Aero % + ATQ %",
+        "Coste 1: 2 × ATQ %"
+      ],
+      "ecoPrincipal": 6000052,
+      "sets": [
+        {
+          "id": 8,
+          "piezas": 5
+        }
+      ],
+      "alternativas": [
+        {
+          "sets": [
+            {
+              "id": 20,
+              "piezas": 3
+            },
+            {
+              "id": 4,
+              "piezas": 2
+            }
+          ],
+          "ecoPrincipal": 6000160
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "80% - 85%",
+          "iconKey": "critProb"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "255% - 270%",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "Regen. de energía",
+          "valor": "120% - 125%",
+          "iconKey": "energia"
+        },
+        {
+          "nombre": "ATQ",
+          "valor": "2000 - 2400",
+          "iconKey": "atq"
+        },
+        {
+          "nombre": "Bonificación de liberación de resonancia",
+          "valor": "20%",
+          "iconKey": "liberation"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21040046,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21040016,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21040045,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21040074,
+        "refinamiento": "R1",
+        "bp": true
+      },
+      {
+        "id": 21040084,
+        "refinamiento": "R5",
+        "bp": false,
+        "f2p": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Jingran + Iuno",
+        "miembros": [
+          {
+            "id": 1212,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1410,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1505,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1212,
+            "sets": [
+              {
+                "id": 35,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1410,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1505,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1110,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1410,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1110,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1410,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1209,
+                  "sets": [
+                    {
+                      "id": 25,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1410,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1508,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1410,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1508,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1503,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1410,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1503,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1307,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1410,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1307,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Augusta + Iuno (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1306,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1410,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1509,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1306,
+            "sets": [
+              {
+                "id": 20,
+                "piezas": 3
+              },
+              {
+                "id": 3,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1410,
+            "sets": [
+              {
+                "id": 20,
+                "piezas": 3
+              },
+              {
+                "id": 4,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1306,
+                  "sets": [
+                    {
+                      "id": 20,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 3,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1410,
+                  "sets": [
+                    {
+                      "id": 20,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 4,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Yangyang: Xuanling + Iuno",
+        "miembros": [
+          {
+            "id": 1610,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1410,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1610,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1410,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1110,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1508,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1610,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1410,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1508,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Iuno + Lynae (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1410,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1410,
+            "sets": [
+              {
+                "id": 20,
+                "piezas": 3
+              },
+              {
+                "id": 4,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1411": {
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: Prob. CRIT + Daño CRIT",
+        "Coste 3: Daño Aero % + ATQ % + Regen. de energía",
+        "Coste 1: 2 × ATQ %"
+      ],
+      "ecoPrincipal": 6000052,
+      "sets": [
+        {
+          "id": 8,
+          "piezas": 1
+        }
+      ],
+      "alternativas": [
+        {
+          "sets": [
+            {
+              "id": 21,
+              "piezas": 3
+            },
+            {
+              "id": 4,
+              "piezas": 2
+            }
+          ],
+          "ecoPrincipal": 6000116
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "70% - 75%",
+          "iconKey": "critProb"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "255% - 270%",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "Regen. de energía",
+          "valor": "120% - 150%",
+          "iconKey": "energia"
+        },
+        {
+          "nombre": "ATQ",
+          "valor": "2000 - 2200",
+          "iconKey": "atq"
+        },
+        {
+          "nombre": "Bonificación de daño de ataque cargado",
+          "valor": "15%",
+          "iconKey": "chargedAttack"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21020066,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21020015,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21020046,
+        "refinamiento": "R1",
+        "f2p": true
+      },
+      {
+        "id": 21020044,
+        "refinamiento": "R5",
+        "f2p": true
+      },
+      {
+        "id": 21020064,
+        "refinamiento": "R5",
+        "f2p": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Sigrika + Qiuyuan",
+        "miembros": [
+          {
+            "id": 1412,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1411,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1412,
+            "sets": [
+              {
+                "id": 29,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1411,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1512,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1412,
+                  "sets": [
+                    {
+                      "id": 29,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1411,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1407,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1412,
+                  "sets": [
+                    {
+                      "id": 29,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1411,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1407,
+                  "sets": [
+                    {
+                      "id": 16,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1412,
+                  "sets": [
+                    {
+                      "id": 29,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1411,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1110,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1412,
+                  "sets": [
+                    {
+                      "id": 29,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1411,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1209,
+                  "sets": [
+                    {
+                      "id": 25,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Sigrika + Phrolova",
+        "miembros": [
+          {
+            "id": 1412,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1608,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1411,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1412,
+            "sets": [
+              {
+                "id": 29,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1411,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Phrolova + Qiuyuan",
+        "miembros": [
+          {
+            "id": 1608,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1411,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1212,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1411,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1212,
+            "sets": [
+              {
+                "id": 35,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1413,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1411,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Galbrena + Qiuyuan",
+        "miembros": [
+          {
+            "id": 1208,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1411,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1608,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1208,
+            "sets": [
+              {
+                "id": 22,
+                "piezas": 3
+              },
+              {
+                "id": 18,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1411,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1208,
+                  "sets": [
+                    {
+                      "id": 22,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 18,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1411,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1412": {
     "guia": [],
@@ -4407,9 +8536,101 @@
             ]
           }
         ]
+      },
+      {
+        "nombre": "Sigrika + Phrolova",
+        "miembros": [
+          {
+            "id": 1412,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1608,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1411,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1412,
+            "sets": [
+              {
+                "id": 29,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1411,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1607,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1412,
+                  "sets": [
+                    {
+                      "id": 29,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1607,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1413": {
     "ecos": {
@@ -4849,9 +9070,321 @@
             ]
           }
         ]
+      },
+      {
+        "nombre": "Qingxiao + Phrolova",
+        "miembros": [
+          {
+            "id": 1413,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1608,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1413,
+            "sets": [
+              {
+                "id": 34,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1110,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1110,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Qingxiao + Lucy",
+        "miembros": [
+          {
+            "id": 1413,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1511,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1413,
+            "sets": [
+              {
+                "id": 34,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1511,
+            "sets": [
+              {
+                "id": 32,
+                "piezas": 1
+              },
+              {
+                "id": 5,
+                "piezas": 2
+              },
+              {
+                "id": 11,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1110,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1511,
+                  "sets": [
+                    {
+                      "id": 32,
+                      "piezas": 1
+                    },
+                    {
+                      "id": 5,
+                      "piezas": 2
+                    },
+                    {
+                      "id": 11,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1110,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1511,
+                  "sets": [
+                    {
+                      "id": 32,
+                      "piezas": 1
+                    },
+                    {
+                      "id": 5,
+                      "piezas": 2
+                    },
+                    {
+                      "id": 11,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1501": {
     "ecos": {
@@ -4903,19 +9436,1095 @@
   },
   "1508": {
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: Prob. CRIT + Daño CRIT",
+        "Coste 3: Daño Destrucción % + ATQ %",
+        "Coste 1: 2 × ATQ %"
+      ],
+      "ecoPrincipal": 6000060,
+      "sets": [
+        {
+          "id": 7,
+          "piezas": 5
+        }
+      ],
+      "alternativas": [
+        {
+          "sets": [
+            {
+              "id": 23,
+              "piezas": 3
+            },
+            {
+              "id": 12,
+              "piezas": 2
+            }
+          ],
+          "ecoPrincipal": 6000167
+        },
+        {
+          "sets": [
+            {
+              "id": 23,
+              "piezas": 2
+            },
+            {
+              "id": 9,
+              "piezas": 2
+            }
+          ],
+          "ecoPrincipal": 6000167
+        },
+        {
+          "sets": [
+            {
+              "id": 8,
+              "piezas": 5
+            }
+          ],
+          "ecoPrincipal": 6000052
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Regen. de energía",
+          "valor": "120% - 130%",
+          "iconKey": "energia"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "255% - 270%",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "80% - 85%",
+          "iconKey": "critProb"
+        },
+        {
+          "nombre": "ATQ",
+          "valor": "2300",
+          "iconKey": "atq"
+        },
+        {
+          "nombre": "Bonificación de liberación de resonancia",
+          "valor": "30%",
+          "iconKey": "liberation"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21010056,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21010045,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21010015,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21010094,
+        "refinamiento": "R5",
+        "f2p": true
+      },
+      {
+        "id": 21010074,
+        "refinamiento": "R1",
+        "bp": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Yangyang: Xuanling + Chisa",
+        "miembros": [
+          {
+            "id": 1610,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1508,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1610,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1508,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1110,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Hiyuki + Lucilla (Rozadura gélida)",
+        "miembros": [
+          {
+            "id": 1108,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1109,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1508,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1108,
+            "sets": [
+              {
+                "id": 30,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1109,
+            "sets": [
+              {
+                "id": 30,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1508,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Hsin + Suoming (Unísono)",
+        "miembros": [
+          {
+            "id": 1311,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1312,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1508,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1311,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1312,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1508,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Yangyang: Xuanling + Phrolova",
+        "miembros": [
+          {
+            "id": 1610,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1608,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1508,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1610,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1508,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1509": {
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: Prob. CRIT + Daño CRIT",
+        "Coste 3: Daño Espectro % + ATQ %",
+        "Coste 1: 2 × ATQ %"
+      ],
+      "ecoPrincipal": 6000189,
+      "sets": [
+        {
+          "id": 24,
+          "piezas": 5
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "70% - 75%",
+          "iconKey": "critProb"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "255% - 270%",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "Regen. de energía",
+          "valor": "120%",
+          "iconKey": "energia"
+        },
+        {
+          "nombre": "ATQ",
+          "valor": "2000 - 2300",
+          "iconKey": "atq"
+        },
+        {
+          "nombre": "Bonificación de daño de ataque básico",
+          "valor": "15% - 30%",
+          "iconKey": "basicAttack"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21030046,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21030045,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21030015,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21030084,
+        "refinamiento": "R5",
+        "f2p": true
+      },
+      {
+        "id": 21030104,
+        "refinamiento": "R1",
+        "bp": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Qingxiao + Lynae (Tensión de tonalidad)",
+        "miembros": [
+          {
+            "id": 1413,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1413,
+            "sets": [
+              {
+                "id": 34,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1110,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1508,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1508,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1503,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1503,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1307,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1307,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Suoming + Lynae (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1312,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1312,
+            "sets": [
+              {
+                "id": 36,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1312,
+                  "sets": [
+                    {
+                      "id": 36,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1312,
+                  "sets": [
+                    {
+                      "id": 36,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1110,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1312,
+                  "sets": [
+                    {
+                      "id": 36,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 38,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Aemeath + Lynae (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1210,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1210,
+            "sets": [
+              {
+                "id": 27,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1508,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1210,
+                  "sets": [
+                    {
+                      "id": 27,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1508,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1210,
+                  "sets": [
+                    {
+                      "id": 27,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1210,
+                  "sets": [
+                    {
+                      "id": 27,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1110,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1210,
+                  "sets": [
+                    {
+                      "id": 27,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Hiyuki + Lynae (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1108,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1108,
+            "sets": [
+              {
+                "id": 30,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1110,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1508,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1108,
+                  "sets": [
+                    {
+                      "id": 30,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1508,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1108,
+                  "sets": [
+                    {
+                      "id": 30,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1209,
+                  "sets": [
+                    {
+                      "id": 25,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1510": {
     "guia": [],
@@ -5083,7 +10692,8 @@
         "variantes": []
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1511": {
     "ecos": {
@@ -5359,7 +10969,7 @@
             "rol": "Sub-DPS"
           },
           {
-            "id": 1512,
+            "id": 1110,
             "rol": "Apoyo"
           }
         ],
@@ -5391,10 +11001,10 @@
             ]
           },
           {
-            "id": 1512,
+            "id": 1110,
             "sets": [
               {
-                "id": 7,
+                "id": 33,
                 "piezas": 5
               }
             ]
@@ -5445,7 +11055,7 @@
             ]
           },
           {
-            "id": 1110,
+            "id": 1512,
             "rol": "Apoyo",
             "configuraciones": [
               [
@@ -5476,7 +11086,7 @@
                   ]
                 },
                 {
-                  "id": 1110,
+                  "id": 1512,
                   "sets": [
                     {
                       "id": 7,
@@ -5531,9 +11141,215 @@
             ]
           }
         ]
+      },
+      {
+        "nombre": "Qingxiao + Lucy",
+        "miembros": [
+          {
+            "id": 1413,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1511,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1413,
+            "sets": [
+              {
+                "id": 34,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1511,
+            "sets": [
+              {
+                "id": 32,
+                "piezas": 1
+              },
+              {
+                "id": 5,
+                "piezas": 2
+              },
+              {
+                "id": 11,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1110,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1511,
+                  "sets": [
+                    {
+                      "id": 32,
+                      "piezas": 1
+                    },
+                    {
+                      "id": 5,
+                      "piezas": 2
+                    },
+                    {
+                      "id": 11,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1110,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1511,
+                  "sets": [
+                    {
+                      "id": 32,
+                      "piezas": 1
+                    },
+                    {
+                      "id": 5,
+                      "piezas": 2
+                    },
+                    {
+                      "id": 11,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Rebecca + Lynae (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1308,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1511,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1308,
+            "sets": [
+              {
+                "id": 32,
+                "piezas": 1
+              },
+              {
+                "id": 3,
+                "piezas": 2
+              },
+              {
+                "id": 9,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1511,
+            "sets": [
+              {
+                "id": 32,
+                "piezas": 1
+              },
+              {
+                "id": 5,
+                "piezas": 2
+              },
+              {
+                "id": 11,
+                "piezas": 2
+              }
+            ]
+          }
+        ],
+        "variantes": []
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1512": {
     "guia": [
@@ -5757,10 +11573,10 @@
         "variantes": []
       },
       {
-        "nombre": "Suoming + Lynae (Impacto de tonalidad)",
+        "nombre": "Qingxiao + Lynae (Tensión de tonalidad)",
         "miembros": [
           {
-            "id": 1312,
+            "id": 1413,
             "rol": "DPS principal"
           },
           {
@@ -5774,10 +11590,10 @@
         ],
         "configuracion": [
           {
-            "id": 1312,
+            "id": 1413,
             "sets": [
               {
-                "id": 36,
+                "id": 34,
                 "piezas": 5
               }
             ]
@@ -5795,7 +11611,7 @@
             "id": 1512,
             "sets": [
               {
-                "id": 38,
+                "id": 7,
                 "piezas": 5
               }
             ]
@@ -5804,7 +11620,8 @@
         "variantes": []
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "1601": {
     "ecos": {
@@ -5856,11 +11673,687 @@
   },
   "1608": {
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: Prob. CRIT + Daño CRIT",
+        "Coste 3: Daño Destrucción % + ATQ %",
+        "Coste 1: 2 × ATQ %"
+      ],
+      "ecoPrincipal": 6000115,
+      "sets": [
+        {
+          "id": 19,
+          "piezas": 3
+        },
+        {
+          "id": 6,
+          "piezas": 2
+        }
+      ],
+      "alternativas": [
+        {
+          "sets": [
+            {
+              "id": 19,
+              "piezas": 3
+            },
+            {
+              "id": 12,
+              "piezas": 2
+            }
+          ],
+          "ecoPrincipal": 6000115
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "90% - 95%",
+          "iconKey": "critProb"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "270% - 290%",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "ATQ",
+          "valor": "2300",
+          "iconKey": "atq"
+        },
+        {
+          "nombre": "Bonificación de daño de Habilidad de resonancia",
+          "valor": "30%",
+          "iconKey": "resonanceSkill"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21050066,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21050016,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21050015,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21050104,
+        "refinamiento": "R1",
+        "bp": true
+      },
+      {
+        "id": 21050084,
+        "refinamiento": "R5",
+        "f2p": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Yangyang: Xuanling + Phrolova",
+        "miembros": [
+          {
+            "id": 1610,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1608,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1610,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1110,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1508,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1610,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1508,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1610,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Sigrika + Phrolova",
+        "miembros": [
+          {
+            "id": 1412,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1608,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1411,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1412,
+            "sets": [
+              {
+                "id": 29,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1411,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1607,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1412,
+                  "sets": [
+                    {
+                      "id": 29,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1607,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Qingxiao + Phrolova",
+        "miembros": [
+          {
+            "id": 1413,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1608,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1413,
+            "sets": [
+              {
+                "id": 34,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1209,
+            "sets": [
+              {
+                "id": 25,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1110,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1110,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 1
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1413,
+                  "sets": [
+                    {
+                      "id": 34,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Jingran + Phrolova",
+        "miembros": [
+          {
+            "id": 1212,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1608,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1212,
+            "sets": [
+              {
+                "id": 35,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1608,
+            "sets": [
+              {
+                "id": 19,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          },
+          {
+            "id": 1110,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1505,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1505,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 1
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1209,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1209,
+                  "sets": [
+                    {
+                      "id": 25,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1512,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1512,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          {
+            "id": 1503,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1212,
+                  "sets": [
+                    {
+                      "id": 35,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1608,
+                  "sets": [
+                    {
+                      "id": 19,
+                      "piezas": 3
+                    },
+                    {
+                      "id": 6,
+                      "piezas": 2
+                    }
+                  ]
+                },
+                {
+                  "id": 1503,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-24"
   },
   "1610": {
     "ecos": {
@@ -6142,9 +12635,176 @@
             ]
           }
         ]
+      },
+      {
+        "nombre": "Yangyang: Xuanling + Lynae (Impacto de tonalidad)",
+        "miembros": [
+          {
+            "id": 1610,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1610,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1110,
+            "sets": [
+              {
+                "id": 7,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1508,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1610,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1509,
+                  "sets": [
+                    {
+                      "id": 24,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1508,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "nombre": "Yangyang: Xuanling + Iuno",
+        "miembros": [
+          {
+            "id": 1610,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1410,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1110,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1610,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1410,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1110,
+            "sets": [
+              {
+                "id": 33,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": [
+          {
+            "id": 1508,
+            "rol": "Apoyo",
+            "configuraciones": [
+              [
+                {
+                  "id": 1610,
+                  "sets": [
+                    {
+                      "id": 33,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1410,
+                  "sets": [
+                    {
+                      "id": 8,
+                      "piezas": 5
+                    }
+                  ]
+                },
+                {
+                  "id": 1508,
+                  "sets": [
+                    {
+                      "id": 7,
+                      "piezas": 5
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ]
       }
     ],
-    "enPreparacion": false
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-23"
   },
   "_armaPersonal": {
     "1105": 21050026,

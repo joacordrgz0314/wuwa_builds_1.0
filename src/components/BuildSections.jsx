@@ -50,7 +50,7 @@ function Status({ state }) {
   );
 }
 
-// Interpreta ecos.stats: «Coste N: A o B (nota)» y «Subestadísticas: A > B > C»; lo demás queda como línea suelta.
+// Interpreta ecos.stats: «Coste N: A + B (nota)» y «Subestadísticas: A > B > C».
 function parseEchoStats(lines = []) {
   const costs = [];
   let subs = [];
@@ -66,29 +66,20 @@ function parseEchoStats(lines = []) {
         note = par[1].trim();
         rest = rest.slice(0, par.index).trim();
       }
-      const alternatives = rest
-        .split(/\s+o\s+/i)
-        .map((option) => option.trim())
-        .filter(Boolean);
-      const options = alternatives.flatMap((alternative, alternativeIndex) =>
-        alternative
-          .split(/\s*\+\s*/)
-          .map((option, optionIndex) => {
-            const quantity = option.match(/^(\d+)\s*(?:x|\u00d7)\s*(.+)$/i);
-            return {
-              text: (quantity?.[2] ?? option).trim(),
-              quantity: quantity ? Number(quantity[1]) : 1,
-              alternative: alternativeIndex > 0 && optionIndex === 0,
-            };
-          })
-          .filter(({ text }) => text),
-      );
+      const options = rest
+        .split(/\s*\+\s*/)
+        .map((option) => {
+          const quantity = option.match(/^(\d+)\s*(?:x|\u00d7)\s*(.+)$/i);
+          return {
+            text: (quantity?.[2] ?? option).trim(),
+            quantity: quantity ? Number(quantity[1]) : 1,
+          };
+        })
+        .filter(({ text }) => text)
       const mergedOptions = Number(c[1]) === 3
         ? options.reduce((result, option) => {
             const repeated = result.find(
               (entry) =>
-                !entry.alternative &&
-                !option.alternative &&
                 entry.text.toLowerCase() === option.text.toLowerCase(),
             );
             if (repeated) repeated.quantity += option.quantity;
@@ -147,10 +138,10 @@ function statIcon(text, elementIcons) {
   return "";
 }
 
-function StatChip({ text, quantity = 1, value, elementIcons, iconKey }) {
+function StatChip({ text, quantity = 1, value, elementIcons, iconKey, scrollLabel }) {
   const icon = statIconUrl(iconKey) || statIcon(text, elementIcons)
-  return (
-    <span className="echo-chip">
+  const label = (
+    <>
       {icon && (
         <img
           className="echo-chip-icon"
@@ -161,6 +152,13 @@ function StatChip({ text, quantity = 1, value, elementIcons, iconKey }) {
         />
       )}
       <span>{text.replace(/^ATK/i, "ATQ")}</span>
+    </>
+  )
+  return (
+    <span className="echo-chip">
+      {scrollLabel ? (
+        <ScrollableRow contentClassName="echo-target-content" label={text}>{label}</ScrollableRow>
+      ) : label}
       {quantity > 1 && <strong className="echo-chip-quantity">{"\u00d7"}{quantity}</strong>}
       {value != null && <strong className="echo-target-value">{value}</strong>}
     </span>
@@ -309,7 +307,7 @@ function EchoTargets({ items, elementIcons }) {
         {items.map(({ nombre, valor, iconKey }, index) => (
           <li key={nombre}>
             <span className={`echo-target-rank rank-${index + 1}`}>{index + 1}</span>
-            <StatChip text={nombre} value={valor || undefined} iconKey={iconKey} elementIcons={elementIcons} />
+            <StatChip text={nombre} value={valor || undefined} iconKey={iconKey} elementIcons={elementIcons} scrollLabel />
           </li>
         ))}
       </ol>
@@ -336,12 +334,11 @@ function EchoStats({ costs, subs, extra, targets, elementIcons, iconosStats, emp
               className="echo-costs"
               style={{ "--cols": Math.min(costs.length, 3) }}
             >
-              {costs.map(({ cost, options }) => (
-                <EchoRow key={cost} cost={cost}>
+              {costs.map(({ cost, options }, index) => (
+                <EchoRow key={`${cost}-${index}`} cost={cost}>
                   <div className={options.length > 1 ? "echo-options is-stacked" : "echo-options"}>
                     {options.map((option, index) => (
                       <span key={`${option.text}-${index}`} className="echo-chips-item">
-                        {cost !== 4 && option.alternative && <em>o</em>}
                         <StatChip
                           text={option.text}
                           quantity={option.quantity}

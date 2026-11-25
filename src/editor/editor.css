@@ -65,6 +65,7 @@
 .editor-form fieldset > legend { padding-inline: 6px; color: var(--editor-accent); }
 .editor-form h3 { margin: 4px 0; font-size: 1rem; }
 .editor-cost + .editor-cost { margin-top: 12px; }
+.editor-cost-action { margin-top: 10px; }
 .editor-item { display: flex; align-items: start; gap: 6px; border-bottom: 1px solid var(--editor-line); padding-block: 9px; }
 .editor-item-content { flex: 1; min-width: 0; }
 .editor-item-actions { display: flex; gap: 3px; }

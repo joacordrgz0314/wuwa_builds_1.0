@@ -6,8 +6,8 @@ La versión oficial vive exclusivamente en package.json, campo version, con form
 
 La web debe mostrarla en:
 
-Final del menú lateral, debajo de «Datos: encore.moe».
-En móvil, al final de la línea legal.
+Al final del menú lateral en escritorio.
+En el pie de página en móvil, junto al enlace de Encore.
 
 En App.jsx se importa mediante:
 
@@ -35,15 +35,14 @@ Si hay dudas entre dos niveles, El asistente propone el menor y consulta al usua
 
 ### 14.2. Actualización obligatoria
 
-Cada cambio aplicado debe:
+- Al iniciar un ajuste nuevo e independiente de la web, propone el nivel de versión en el plan y actualiza `package.json` en el mismo cambio aprobado. Esto aplica aunque el ajuste anterior todavía esté pendiente de publicar.
+- Las iteraciones del mismo ajuste abierto conservan la versión asignada. Si el alcance crece y pasa a un nivel superior, propone ese nivel en el plan y actualiza `package.json` en el cambio aprobado.
+- Dar por terminado un ajuste lo cierra. Publicar en producción cierra los ajustes incluidos en esa versión. Cualquier cambio posterior sobre un ajuste cerrado se versiona como un ajuste nuevo.
+- Registra cada iteración aplicada en su handoff y en el índice con la versión correspondiente, aunque se repita.
 
-Determinar el nivel de versión.
-Proponerlo en el plan.
-Actualizar package.json en el mismo cambio aprobado.
+Por ejemplo, si «Próximamente» pasa de `0.16.45` a `0.16.46`, las revisiones de su diseño conservan `0.16.46` mientras el ajuste siga abierto. Si después se inicia una corrección independiente en Armas, sube a `0.16.47` como parche, incluso antes de publicar.
 
-Nunca dejes el versionado para después.
-
-Los cambios exclusivos de documentación, reglas o handoffs no incrementan la versión si no modifican la web.
+Conserva la versión para cambios exclusivos de documentación, reglas, handoffs o del editor local. Registra los cambios del editor local en su handoff con la versión vigente. Si un cambio del editor afecta los datos que consume la web pública o cómo se muestran, aplica el nivel de versión correspondiente al impacto público.
 
 Mientras el primer número sea 0, el proyecto sigue en desarrollo.
 

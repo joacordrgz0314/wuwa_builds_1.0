@@ -3,6 +3,8 @@ import { isBuildInPreparation } from '../constants.js'
 export const sections = ['ecos', 'armas', 'equipos']
 export const maxWeapons = 5
 
+export const secondaryCost4 = 'second4'
+
 const identity = (member) => ({
   id: member.id,
   sets: member.sets ?? (member.setId ? [{ id: member.setId, piezas: 5 }] : []),
@@ -50,17 +52,18 @@ export function draftFrom(build, characterId, { fresh = false } = {}) {
   if (fresh) build = {}
   const ecos = build.ecos ?? {}
   const stats = ecos.stats ?? []
-  const costs = Object.fromEntries([4, 3, 1].map((cost) => {
+  const costs = Object.fromEntries([4, secondaryCost4, 3, 1].flatMap((key) => {
+    const cost = key === secondaryCost4 ? 4 : key
     const prefix = `Coste ${cost}:`
-    const text = stats.find((line) => line.startsWith(prefix))?.slice(prefix.length).trim()
+    const line = stats.filter((item) => item.startsWith(prefix))[key === secondaryCost4 ? 1 : 0]
+    if (key === secondaryCost4 && !line) return []
+    const text = line?.slice(prefix.length).trim()
     const note = text?.match(/\(([^)]*)\)\s*$/)?.[1] ?? ''
-    const rows = text?.replace(/\s*\([^)]*\)\s*$/, '').split(/\s+o\s+/).flatMap((group, index) =>
-      group.split(/\s+\+\s+/).map((value, position) => {
-        const match = value.match(/^(\d+)\s*[×x]\s*(.+)$/i)
-        return { name: match?.[2] ?? value, quantity: Number(match?.[1] ?? 1), alternative: index > 0 && position === 0 }
-      }),
-    ) ?? []
-    return [cost, { rows, note }]
+    const rows = text?.replace(/\s*\([^)]*\)\s*$/, '').split(/\s*\+\s*/).map((value) => {
+      const match = value.match(/^(\d+)\s*[×x]\s*(.+)$/i)
+      return { name: match?.[2] ?? value, quantity: Number(match?.[1] ?? 1) }
+    }) ?? []
+    return [[key, { rows, note }]]
   }))
   return {
     enPreparacion,
@@ -115,12 +118,14 @@ function writeTeam(team, names) {
 }
 
 export function toBuild(draft, people) {
-  const stats = [4, 3, 1].flatMap((cost) => {
-    const { rows, note } = draft.costs[cost]
-    if (!rows.length) return []
-    const text = rows.map(({ name, quantity, alternative }, index) =>
-      `${index ? alternative ? ' o ' : ' + ' : ''}${quantity > 1 ? quantity + ' × ' : ''}${name}`,
-    ).join('')
+  const stats = [4, secondaryCost4, 3, 1].flatMap((key) => {
+    const entry = draft.costs[key]
+    if (!entry?.rows.length) return []
+    const { rows, note } = entry
+    const cost = key === secondaryCost4 ? 4 : key
+    const text = rows.map(({ name, quantity }) =>
+      `${quantity > 1 ? quantity + ' × ' : ''}${name}`,
+    ).join(' + ')
     return [`Coste ${cost}: ${text}${note.trim() ? ` (${note.trim()})` : ''}`]
   })
   const names = new Map(people.map(({ id, name }) => [id, name]))
