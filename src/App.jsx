@@ -3,6 +3,8 @@ import { bootstrap, getCharacters, preloadFirst, weaponIconUrl } from './api.js'
 import CharacterCard from './components/CharacterCard.jsx'
 import FilterBar from './components/FilterBar.jsx'
 import CharacterPage from './components/CharacterPage.jsx'
+import WeaponCatalog from './components/WeaponCatalog.jsx'
+import WeaponPage from './components/WeaponPage.jsx'
 import Ambient from './components/Ambient.jsx'
 import { version } from '../package.json'
 
@@ -25,10 +27,15 @@ const LOADER_PARTICLES = Array.from({ length: 18 }, (_, i) => ({
 // Texto sin acentos ni mayúsculas para comparar en el buscador.
 const norm = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 
-// Las rutas sin ID de personaje muestran el catálogo.
 function readRoute() {
-  const character = /^#\/personaje\/(\d+)$/.exec(window.location.hash)
-  return character ? Number(character[1]) : null
+  const hash = window.location.hash
+  const character = /^#\/personaje\/(\d+)$/.exec(hash)
+  const weaponDetail = /^#\/armas\/([^/]*)$/.exec(hash)
+  return {
+    routeId: character ? Number(character[1]) : null,
+    isWeapons: hash === '#/armas' || Boolean(weaponDetail),
+    weaponId: weaponDetail ? weaponDetail[1] : null,
+  }
 }
 
 // Opciones únicas (por id) de los personajes.
@@ -61,13 +68,16 @@ export default function App() {
   const [element, setElement] = useState(null)
   const [weapon, setWeapon] = useState(null)
   const [query, setQuery] = useState('')
-  const [routeId, setRouteId] = useState(readRoute)
+  const [{ routeId, isWeapons, weaponId }, setRoute] = useState(readRoute)
+  const [weaponFilters, setWeaponFilters] = useState({ query: '', type: null, rarity: null })
   const [menuOpen, setMenuOpen] = useState(false)
   const [menuHidden, setMenuHidden] = useState(false)
   const menuButton = useRef(null)
 
   useEffect(() => {
+    if (isWeapons || state !== 'loading') return undefined
     let cancelled = false
+    setPhase(0)
     getCharacters()
       .then(async (list) => {
         if (cancelled) return
@@ -87,7 +97,7 @@ export default function App() {
         if (!cancelled) setState('error')
       })
     return () => { cancelled = true }
-  }, [])
+  }, [isWeapons, state])
 
   // La pantalla de carga se desvanece y se desmonta cuando la app está lista (o falla).
   useEffect(() => {
@@ -98,7 +108,7 @@ export default function App() {
 
   useEffect(() => {
     const onHash = () => {
-      setRouteId(readRoute())
+      setRoute(readRoute())
       setMenuOpen(false)
       setMenuHidden(false)
       window.scrollTo(0, 0)
@@ -187,12 +197,17 @@ export default function App() {
         <nav className="side-nav" id="site-navigation" aria-label="Secciones">
           <span className="side-link is-disabled" aria-disabled="true">Inicio <em>Pronto</em></span>
           <a
-            className="side-link is-active"
+            className={`side-link${isWeapons ? '' : ' is-active'}`}
             href="#/personajes"
-            aria-current={routeId == null ? 'page' : undefined}
+            aria-current={!isWeapons && routeId == null ? 'page' : undefined}
             onClick={() => setMenuOpen(false)}
           >Personajes</a>
-          <span className="side-link is-disabled" aria-disabled="true">Armas <em>Pronto</em></span>
+          <a
+            className={`side-link${isWeapons ? ' is-active' : ''}`}
+            href="#/armas"
+            aria-current={isWeapons ? (weaponId == null ? 'page' : 'location') : undefined}
+            onClick={() => setMenuOpen(false)}
+          >Armas</a>
         </nav>
         <div className="side-foot">
           <span className="side-rule" aria-hidden="true" />
@@ -201,7 +216,10 @@ export default function App() {
       </aside>
     <main className="app">
       {routeId == null && <Ambient />}
-      {loaderOn && (
+      {isWeapons && (weaponId == null
+        ? <WeaponCatalog filters={weaponFilters} onFilterChange={setWeaponFilters} />
+        : <WeaponPage key={weaponId} weaponId={weaponId} />)}
+      {!isWeapons && loaderOn && (
         <div className={`loader${state === 'loading' ? '' : ' is-leaving'}`} role="status" aria-live="polite">
           <div className="loader-rings" aria-hidden="true"><span /><span /><span /></div>
           <div className="loader-particles" aria-hidden="true">
@@ -217,10 +235,10 @@ export default function App() {
           </div>
         </div>
       )}
-      {state === 'error' && (
+      {!isWeapons && state === 'error' && (
         <p className="app-msg">No se pudo conectar con la API. Revisa tu conexión o recarga la página.</p>
       )}
-      {state === 'ok' && routeId != null && (
+      {!isWeapons && state === 'ok' && routeId != null && (
         <CharacterPage
           key={routeId}
           character={characters.find((c) => c.Id === routeId)}
@@ -230,7 +248,7 @@ export default function App() {
           elementIcons={elementIcons}
         />
       )}
-      {state === 'ok' && routeId == null && (
+      {!isWeapons && state === 'ok' && routeId == null && (
         <>
           {UPCOMING.length > 0 && (
             <section className="upcoming" aria-labelledby="upcoming-title">
@@ -251,6 +269,7 @@ export default function App() {
               </ul>
             </section>
           )}
+          <h2 className="catalog-title">Personajes</h2>
           <FilterBar
             elements={elements}
             weapons={weapons}

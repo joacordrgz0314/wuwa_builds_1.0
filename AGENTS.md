@@ -17,7 +17,7 @@ Sitio personal de Wuthering Waves. React 18, Vite 5, JavaScript ESM y CSS plano.
 | Builds, diseño general, Equipos, Armas, Materiales, Ecos y Guía | [Reglas de fichas](docs/REGLAS-FICHAS.md) |
 | Versionado, verificación, handoffs y Git | [Reglas de entrega](docs/REGLAS-ENTREGA.md) |
 | Estado y próximos pasos | [Death Note](docs/DEATH-NOTE.md) |
-| Tandas y plantilla de extracción | [Death Note del catálogo](docs/DEATH-NOTE-CATALOGO.md) |
+| Builds manuales, plantilla y revisión antes de un commit | [Death Note del catálogo](docs/DEATH-NOTE-CATALOGO.md) |
 
 ## Implementación y cierre
 

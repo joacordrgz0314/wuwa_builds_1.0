@@ -29,7 +29,9 @@ export async function loadCatalog() {
   return {
     characters,
     people: characters.map(({ Id, Name, RoleHeadIcon }) => ({ id: Id, name: Name, icon: assetUrl(RoleHeadIcon) })),
-    weapons: [...weapons.values()].map(({ Id, Name, Icon, Type }) => ({ id: Id, name: Name, icon: assetUrl(Icon), type: Type })),
+    weapons: [...weapons.values()]
+      .map(({ Id, Name, Icon, Type, QualityId }) => ({ id: Id, name: Name, icon: assetUrl(Icon), type: Type, rarity: QualityId }))
+      .sort((a, b) => (b.rarity ?? 0) - (a.rarity ?? 0) || a.name.localeCompare(b.name, 'es')),
     sets: [...sets.values()].map(({ Id, Name, Icon }) => ({ id: Id, name: Name, icon: assetUrl(Icon) })),
     echoes: [...echoes].map(([id, { name, icon }]) => ({ id, name, icon: assetUrl(icon) })),
   }

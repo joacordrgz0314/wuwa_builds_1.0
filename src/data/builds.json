@@ -6116,7 +6116,7 @@
             "id": 1312,
             "sets": [
               {
-                "id": 8,
+                "id": 36,
                 "piezas": 5
               }
             ]
@@ -6150,7 +6150,7 @@
                   "id": 1312,
                   "sets": [
                     {
-                      "id": 8,
+                      "id": 36,
                       "piezas": 5
                     }
                   ]
@@ -6185,7 +6185,7 @@
                   "id": 1312,
                   "sets": [
                     {
-                      "id": 8,
+                      "id": 36,
                       "piezas": 5
                     }
                   ]
@@ -6220,7 +6220,7 @@
                   "id": 1312,
                   "sets": [
                     {
-                      "id": 8,
+                      "id": 36,
                       "piezas": 5
                     }
                   ]
@@ -6255,7 +6255,7 @@
                   "id": 1312,
                   "sets": [
                     {
-                      "id": 8,
+                      "id": 36,
                       "piezas": 5
                     }
                   ]
@@ -6715,7 +6715,7 @@
       }
     ],
     "enPreparacion": false,
-    "fechaActualizacion": "2026-11-23"
+    "fechaActualizacion": "2026-11-24"
   },
   "1402": {
     "ecos": {
@@ -6759,11 +6759,262 @@
   },
   "1407": {
     "ecos": {
-      "stats": []
+      "stats": [
+        "Coste 4: Prob. CRIT + Daño CRIT",
+        "Coste 3: Daño Aero % + ATQ %",
+        "Coste 1: 2 × ATQ %"
+      ],
+      "ecoPrincipal": 6000113,
+      "sets": [
+        {
+          "id": 16,
+          "piezas": 5
+        }
+      ],
+      "subestadisticas": [
+        {
+          "nombre": "Prob. CRIT",
+          "valor": "70% - 80%",
+          "iconKey": "critProb"
+        },
+        {
+          "nombre": "Daño CRIT",
+          "valor": "270% - 285%",
+          "iconKey": "critDmg"
+        },
+        {
+          "nombre": "Regen. de energía",
+          "valor": "115% - 120%",
+          "iconKey": "energia"
+        },
+        {
+          "nombre": "ATQ",
+          "valor": "2200 - 2400",
+          "iconKey": "atq"
+        }
+      ]
     },
-    "armas": [],
-    "equipos": [],
-    "enPreparacion": true
+    "armas": [
+      {
+        "id": 21030026,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21030036,
+        "refinamiento": "R1"
+      },
+      {
+        "id": 21030045,
+        "refinamiento": "R1",
+        "permanente": true
+      },
+      {
+        "id": 21030094,
+        "refinamiento": "R5",
+        "f2p": true
+      },
+      {
+        "id": 21030104,
+        "refinamiento": "R1",
+        "bp": true
+      }
+    ],
+    "equipos": [
+      {
+        "nombre": "Qingxiao + Lynae (Tensión de tonalidad)",
+        "miembros": [
+          {
+            "id": 1413,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1509,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1407,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1413,
+            "sets": [
+              {
+                "id": 34,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1509,
+            "sets": [
+              {
+                "id": 24,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1407,
+            "sets": [
+              {
+                "id": 16,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Sigrika + Lucilla",
+        "miembros": [
+          {
+            "id": 1412,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1109,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1407,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1412,
+            "sets": [
+              {
+                "id": 29,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1109,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1407,
+            "sets": [
+              {
+                "id": 16,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Sigrika + Qiuyuan",
+        "miembros": [
+          {
+            "id": 1412,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1411,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1407,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1412,
+            "sets": [
+              {
+                "id": 29,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1411,
+            "sets": [
+              {
+                "id": 8,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1407,
+            "sets": [
+              {
+                "id": 16,
+                "piezas": 5
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      },
+      {
+        "nombre": "Cartethyia + Ciaccona",
+        "miembros": [
+          {
+            "id": 1409,
+            "rol": "DPS principal"
+          },
+          {
+            "id": 1407,
+            "rol": "Sub-DPS"
+          },
+          {
+            "id": 1508,
+            "rol": "Apoyo"
+          }
+        ],
+        "configuracion": [
+          {
+            "id": 1409,
+            "sets": [
+              {
+                "id": 17,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1407,
+            "sets": [
+              {
+                "id": 16,
+                "piezas": 5
+              }
+            ]
+          },
+          {
+            "id": 1508,
+            "sets": [
+              {
+                "id": 23,
+                "piezas": 3
+              },
+              {
+                "id": 6,
+                "piezas": 2
+              }
+            ]
+          }
+        ],
+        "variantes": []
+      }
+    ],
+    "enPreparacion": false,
+    "fechaActualizacion": "2026-11-25"
   },
   "1409": {
     "ecos": {

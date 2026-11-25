@@ -89,8 +89,12 @@
   box-shadow: 0 8px 22px #0006;
 }
 .editor-picker-menu input { width: 100%; }
-.editor-picker-results { max-height: min(40vh, 18rem); overflow: auto; }
+.editor-picker-menu.opens-up { top: auto; bottom: calc(100% + 4px); }
+.editor-picker-results { max-height: min(40vh, 18rem, var(--picker-results-height, 18rem)); overflow: auto; }
 .editor-picker-results button { margin-block: 3px; }
+.editor-picker-results img, .editor-picker-stars { flex: none; }
+.editor-picker-name { min-width: 0; overflow-wrap: anywhere; }
+.editor-picker-stars { margin-inline-start: auto; white-space: nowrap; }
 .build-editor :where(.editor-toolbar, .editor-tabs, .editor-form) :where(button, select, input:not([type="checkbox"]), textarea) {
   font: inherit;
   min-height: 44px;
